@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing & Plans | AudioSync</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a202c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     /* Pricing specific styles */
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
-      align-items: center;
+      align-items: stretch;
       margin-bottom: 4rem;
     }
     .pricing-card {
@@ -24,6 +25,8 @@
       box-shadow: var(--shadow-md);
       transition: transform var(--transition-normal);
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
     .pricing-card:hover {
       transform: translateY(-10px);
@@ -46,11 +49,11 @@
       padding: 0.5rem 1rem;
       border-radius: 20px;
       font-size: 0.85rem;
-      font-weight: bold;
+      font-weight: 550;
     }
     .price {
       font-size: 3rem;
-      font-weight: 600;
+      font-weight: 550;
       color: var(--text-primary);
       margin: 1rem 0;
     }
@@ -78,9 +81,12 @@
       flex-shrink: 0;
     }
     @media (max-width: 992px) {
-      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
       .pricing-card.popular { transform: none; }
       .pricing-card.popular:hover { transform: translateY(-10px); }
+    }
+    @media (max-width: 767px) {
+      .pricing-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -94,14 +100,8 @@
       <a href="index.html" class="brand">
         <i data-lucide="music-4" class="accent"></i> AudioSync
       </a>
-      
-      <button class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-links">
+      <div class="nav-menu">
+        <ul class="nav-links">
         <li class="nav-dropdown">
           <a href="#" class="nav-link dropdown-toggle">Home <i data-lucide="chevron-down"></i></a>
           <ul class="dropdown-menu">
@@ -117,8 +117,7 @@
         <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
       </ul>
-
-      <div class="nav-actions">
+        <div class="nav-actions">
         <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
@@ -127,13 +126,20 @@
         </button>
         <a href="login.html" class="btn btn-primary btn-sm">Login</a>
       </div>
+      </div>
+      <!-- Hamburger Menu for Mobile -->
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
-  <section class="container hero" style="min-height: 40vh; align-items: center; justify-content: center; text-align: center; background: var(--bg-secondary); border-radius: 0 0 40px 40px; margin-bottom: 4rem;">
-    <div class="fade-in">
-      <h1 class="hero-title">Simple, Transparent Pricing</h1>
-      <p class="hero-subtitle">Choose the perfect plan for your creative needs.</p>
+  <section class="hero" style="min-height: 55vh; align-items: center; justify-content: center; text-align: center; margin-bottom: 4rem; background: var(--accent-color); color: var(--text-primary); padding: 8rem 2rem 4rem 2rem; display: flex;">
+    <div class="fade-in" style="width: 100%;">
+      <h1 class="hero-title" style="background: none; -webkit-text-fill-color: var(--text-primary); color: var(--text-primary);">Simple, Transparent Pricing</h1>
+      <p class="hero-subtitle" style="color: var(--text-primary);">Choose the perfect plan for your creative needs.</p>
     </div>
   </section>
 
@@ -151,7 +157,7 @@
           <li><i data-lucide="check-circle"></i> Podcasts & Social Media</li>
           <li><i data-lucide="x" style="color:var(--text-secondary);"></i> Client Work</li>
         </ul>
-        <button class="btn btn-secondary" style="width: 100%;">Get Started</button>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">Get Started</button>
       </div>
 
       <!-- Pro Plan -->
@@ -166,7 +172,7 @@
           <li><i data-lucide="check-circle"></i> Commercial Client Work</li>
           <li><i data-lucide="check-circle"></i> Digital Advertising</li>
         </ul>
-        <button class="btn btn-primary" style="width: 100%;">Start Free Trial</button>
+        <button class="btn btn-primary" style="width: 100%; margin-top: auto;">Start Free Trial</button>
       </div>
 
       <!-- Broadcast Plan -->
@@ -180,13 +186,27 @@
           <li><i data-lucide="check-circle"></i> SVOD/VOD Streaming</li>
           <li><i data-lucide="check-circle"></i> Isolated Stems</li>
         </ul>
-        <button class="btn btn-secondary" style="width: 100%;">Get Started</button>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">Get Started</button>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <p>For global studios and networks.</p>
+        <div class="price">$249<span>/mo</span></div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check-circle"></i> Everything in Broadcast</li>
+          <li><i data-lucide="check-circle"></i> Custom Licensing</li>
+          <li><i data-lucide="check-circle"></i> Dedicated Manager</li>
+          <li><i data-lucide="check-circle"></i> API Access</li>
+        </ul>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">Contact Sales</button>
       </div>
     </div>
   </section>
 
   <!-- 2. Comparison Table (Image 1 beside it) -->
-  <section class="container fade-in" style="background-color: var(--bg-secondary); padding: 5rem 2rem; border-radius: var(--border-radius-lg); margin-bottom: 4rem;">
+  <section class="container fade-in" style="padding: 5rem 2rem; margin-bottom: 4rem;">
     <div style="display: flex; gap: 4rem; flex-wrap: wrap; align-items: center;">
       <div style="flex: 2; min-width: 300px;">
         <h2 class="section-title">Feature Comparison</h2>
@@ -216,7 +236,7 @@
         </div>
       </div>
       <div style="flex: 1; min-width: 300px;">
-        <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?w=600&q=80" alt="Comparison" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+        <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?w=600&q=80" alt="Comparison" style="box-shadow: var(--shadow-lg);">
       </div>
     </div>
   </section>
@@ -235,7 +255,7 @@
         <button class="btn btn-primary">Contact Sales</button>
       </div>
       <div style="flex: 1;">
-        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="Enterprise" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="Enterprise" style="box-shadow: var(--shadow-lg);">
       </div>
     </div>
   </section>
@@ -245,24 +265,47 @@
     <div class="section-header">
       <h2 class="section-title">Pricing FAQ</h2>
     </div>
-    <div style="display: flex; gap: 4rem; flex-wrap: wrap;">
+    <div style="display: flex; gap: 4rem; flex-wrap: wrap; align-items: center;">
       <div style="flex: 2; min-width: 300px;">
-        <div style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0;">
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Can I upgrade or downgrade anytime?</h3>
-          <p style="color: var(--text-secondary);">Yes, you can change your plan at any time from your dashboard settings. Upgrades take effect immediately.</p>
-        </div>
-        <div style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0;">
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Do you offer student discounts?</h3>
-          <p style="color: var(--text-secondary);">Yes! We offer a 50% discount for eligible students and educators. Please contact support with your .edu email.</p>
-        </div>
-        <div style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0;">
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">What forms of payment do you accept?</h3>
-          <p style="color: var(--text-secondary);">We accept all major credit cards, PayPal, and Apple Pay. For Enterprise plans, we can arrange wire transfers.</p>
-        </div>
+        <details style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; cursor: pointer;">
+          <summary style="font-size: 1.1rem; font-weight: 550; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between;">
+            Can I upgrade or downgrade anytime?
+            <i data-lucide="chevron-down" style="color: var(--accent-color);"></i>
+          </summary>
+          <p style="color: var(--text-secondary); margin-top: 1rem;">Yes, you can change your plan at any time from your dashboard settings. Upgrades take effect immediately.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; cursor: pointer;">
+          <summary style="font-size: 1.1rem; font-weight: 550; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between;">
+            Do you offer student discounts?
+            <i data-lucide="chevron-down" style="color: var(--accent-color);"></i>
+          </summary>
+          <p style="color: var(--text-secondary); margin-top: 1rem;">Yes! We offer a 50% discount for eligible students and educators. Please contact support with your .edu email.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; cursor: pointer;">
+          <summary style="font-size: 1.1rem; font-weight: 550; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between;">
+            What forms of payment do you accept?
+            <i data-lucide="chevron-down" style="color: var(--accent-color);"></i>
+          </summary>
+          <p style="color: var(--text-secondary); margin-top: 1rem;">We accept all major credit cards, PayPal, and Apple Pay. For Enterprise plans, we can arrange wire transfers.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; cursor: pointer;">
+          <summary style="font-size: 1.1rem; font-weight: 550; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between;">
+            Can I use the music for commercial client work?
+            <i data-lucide="chevron-down" style="color: var(--accent-color);"></i>
+          </summary>
+          <p style="color: var(--text-secondary); margin-top: 1rem;">Yes! Our Pro Creator and higher plans fully cover commercial work for your clients without any additional licensing fees.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; cursor: pointer;">
+          <summary style="font-size: 1.1rem; font-weight: 550; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between;">
+            Are there any daily download limits?
+            <i data-lucide="chevron-down" style="color: var(--accent-color);"></i>
+          </summary>
+          <p style="color: var(--text-secondary); margin-top: 1rem;">No. All of our subscription plans come with unlimited downloads so you can focus on creating without boundaries.</p>
+        </details>
       </div>
       <div style="flex: 1; display: flex; flex-direction: column; gap: 2rem; min-width: 300px;">
-        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80" alt="FAQ 1" style="border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); aspect-ratio: 16/9; object-fit: cover;">
-        <img src="https://images.unsplash.com/photo-1516280440502-85f543632281?w=400&q=80" alt="FAQ 2" style="border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); aspect-ratio: 16/9; object-fit: cover;">
+        <img src="assets/images/Simple Licensing.png" alt="FAQ 1" style="border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); aspect-ratio: 16/9; object-fit: cover;">
+        <img src="assets/images/Fast Downloads.png" alt="FAQ 2" style="border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); aspect-ratio: 16/9; object-fit: cover;">
       </div>
     </div>
   </section>
@@ -275,6 +318,12 @@
           <i data-lucide="music-4"></i> AudioSync
         </a>
         <p>Your premium source for royalty-free music and professional sound effects.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+        </div>
       </div>
       <div>
         <h3 class="footer-title">Library</h3>
@@ -300,6 +349,13 @@
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
+      <div>
+        <h3 class="footer-title">Contact Us</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:support@audiosync.com" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> support@audiosync.com</a></li>
+          <li><a href="mailto:licensing@audiosync.com" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> licensing@audiosync.com</a></li>
+        </ul>
+      </div>
     </div>
     <div class="container footer-bottom">
       <p>&copy; 2026 AudioSync. All rights reserved.</p>
@@ -310,5 +366,15 @@
   <script>
     lucide.createIcons();
   </script>
+<script src="assets/js/button-functionality.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

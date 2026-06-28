@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium Creative Marketplace | AudioSync</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a202c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
@@ -11,49 +13,187 @@
     .hero-split {
       display: flex;
       align-items: center;
-      min-height: 90vh;
+      min-height: 100vh;
       padding-top: 80px;
     }
+
     .hero-split-content {
       flex: 1;
       padding-right: 4rem;
     }
+
     .hero-split-image {
       flex: 1;
-      border-radius: var(--border-radius-lg);
+
       overflow: hidden;
       box-shadow: var(--shadow-lg);
     }
-    [dir="rtl"] .hero-split-content { padding-right: 0; padding-left: 4rem; }
-    
+
+    [dir="rtl"] .hero-split-content {
+      padding-right: 0;
+      padding-left: 4rem;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .hero-split {
+        padding-top: 130px;
+      }
+    }
+
     @media (max-width: 992px) {
-      .hero-split { flex-direction: column; text-align: center; }
-      .hero-split-content { padding: 0 0 3rem 0; }
+      .hero-split {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-split-content {
+        padding: 0 0 3rem 0;
+      }
     }
 
     /* Horizontal Cards for Trending */
     .card-horizontal {
       display: flex;
       flex-direction: row;
-      align-items: center;
-      gap: 1.5rem;
+      align-items: stretch;
+      padding: 0;
+      overflow: hidden;
     }
+
     .card-horizontal .card-img-wrapper {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: auto;
       margin-bottom: 0;
       flex-shrink: 0;
-      aspect-ratio: 1;
+      border-radius: 0;
     }
+
+    .premium-features .card {
+      text-align: center;
+    }
+
+    .card-horizontal .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      display: block;
+    }
+
+    .card-horizontal .card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Modern Genre Cloud (Pill Design) */
+    .genre-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .genre-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 3.5rem;
+      border-radius: 100px;
+      /* Fully rounded pill */
+      background: transparent;
+      border: 2px solid var(--border-color);
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      min-width: 200px;
+    }
+
+    .genre-pill::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--genre-color);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+
+    .genre-pill:hover {
+      border-color: var(--genre-color);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 30px -10px var(--genre-color);
+    }
+
+    .genre-pill:hover::before {
+      opacity: 0.15;
+    }
+
+    .genre-name {
+      font-size: 1.5rem;
+      font-weight: 550;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .genre-pill:hover .genre-name {
+      color: var(--genre-color);
+    }
+
+    .genre-count {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      position: relative;
+      z-index: 1;
+    }
+
     .creator-avatar {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       margin: 0 auto 1rem;
       object-fit: cover;
+      object-position: center top;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    @media (max-width: 767px) {
+      .hero-buttons {
+        flex-direction: column;
+      }
+    }
+    .trending-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem; /* fallback gap if grid-4 doesn't provide it */
+    }
+
+    @media (max-width: 767px) {
+      .trending-grid {
+        grid-template-columns: 1fr;
+      }
+      .premium-features .card i,
+      .premium-features .card svg {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="scroll-progress"></div>
@@ -64,57 +204,60 @@
       <a href="index.html" class="brand">
         <i data-lucide="music-4" class="accent"></i> AudioSync
       </a>
-      
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link dropdown-toggle active">Home <i data-lucide="chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html" class="nav-link">Home 1</a></li>
+              <li><a href="home-2.html" class="nav-link active">Home 2</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="music-library.html" class="nav-link">Music Library</a></li>
+          <li><a href="license-center.html" class="nav-link">License Center</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="icon-btn rtl-toggle" title="Toggle RTL">
+            <i data-lucide="arrow-left-right"></i>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm">Login</a>
+        </div>
+      </div>
+      <!-- Hamburger Menu for Mobile -->
       <button class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-      <ul class="nav-links">
-        <li class="nav-dropdown">
-          <a href="#" class="nav-link dropdown-toggle active">Home <i data-lucide="chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="index.html" class="nav-link">Home 1</a></li>
-            <li><a href="home-2.html" class="nav-link active">Home 2</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="music-library.html" class="nav-link">Music Library</a></li>
-        <li><a href="license-center.html" class="nav-link">License Center</a></li>
-        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
-          <i data-lucide="moon"></i>
-        </button>
-        <button class="icon-btn rtl-toggle" title="Toggle RTL">
-          <i data-lucide="arrow-left-right"></i>
-        </button>
-        <a href="login.html" class="btn btn-primary btn-sm">Login</a>
-      </div>
     </div>
   </nav>
 
   <!-- 1. Hero Split Layout -->
   <section class="container hero-split fade-in">
     <div class="hero-split-content">
-      <h1 class="hero-title" style="text-align: left; background: none; -webkit-text-fill-color: inherit; color: var(--text-primary);">
+      <h1 class="hero-title"
+        style="text-align: left; background: none; -webkit-text-fill-color: inherit; color: var(--text-primary);">
         The Premium <span style="color: var(--accent-color);">Creative</span> Marketplace
       </h1>
-      <p class="hero-subtitle" style="text-align: left; margin-left: 0;">Access top-tier audio assets curated specifically for elite creators, game developers, and agencies.</p>
-      
-      <div style="display: flex; gap: 1rem;">
+      <p class="hero-subtitle" style="text-align: left; margin-left: 0; color: var(--text-secondary);">Access top-tier
+        audio assets curated specifically for elite creators, game developers, and agencies.</p>
+
+      <div class="hero-buttons">
         <button class="btn btn-primary">Start Free Trial</button>
-        <button class="btn btn-secondary">Explore Catalog</button>
+        <button class="btn btn-alt">Explore Catalog</button>
       </div>
     </div>
     <div class="hero-split-image float">
-      <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?w=800&q=80&auto=format&fit=crop" alt="Music Producer Mixing">
+      <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?w=800&q=80&auto=format&fit=crop"
+        alt="Music Producer Mixing">
     </div>
   </section>
 
@@ -124,44 +267,44 @@
       <h2 class="section-title">Trending Tracks</h2>
       <p class="section-subtitle" style="margin-left: 0;">What the community is downloading right now.</p>
     </div>
-    <div class="grid-4" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="grid-4 trending-grid">
       <div class="card card-horizontal">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5956093?w=200&q=80&auto=format&fit=crop" alt="Track Art">
+          <img src="assets/images/Midnight Drive.png" alt="Midnight Drive">
         </div>
         <div class="card-body">
           <h3 class="card-title">Midnight Drive</h3>
-          <p>Synthwave • 110 BPM</p>
+          <p>Synthwave Ã¢â‚¬Â¢ 110 BPM</p>
           <button class="icon-btn"><i data-lucide="play-circle"></i></button>
         </div>
       </div>
       <div class="card card-horizontal">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200&q=80&auto=format&fit=crop" alt="Track Art">
+          <img src="assets/images/Orchestra.png" alt="Orchestral Triumph">
         </div>
         <div class="card-body">
           <h3 class="card-title">Orchestral Triumph</h3>
-          <p>Cinematic • 140 BPM</p>
+          <p>Cinematic Ã¢â‚¬Â¢ 140 BPM</p>
           <button class="icon-btn"><i data-lucide="play-circle"></i></button>
         </div>
       </div>
       <div class="card card-horizontal">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200&q=80&auto=format&fit=crop" alt="Track Art">
+          <img src="assets/images/Deep house.png" alt="Deep House Grooves">
         </div>
         <div class="card-body">
           <h3 class="card-title">Deep House Grooves</h3>
-          <p>Electronic • 124 BPM</p>
+          <p>Electronic Ã¢â‚¬Â¢ 124 BPM</p>
           <button class="icon-btn"><i data-lucide="play-circle"></i></button>
         </div>
       </div>
       <div class="card card-horizontal">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1516280440502-85f543632281?w=200&q=80&auto=format&fit=crop" alt="Track Art">
+          <img src="assets/images/Lofi Chill Beats.png" alt="Lofi Chill Beats">
         </div>
         <div class="card-body">
           <h3 class="card-title">Lofi Chill Beats</h3>
-          <p>Lofi • 80 BPM</p>
+          <p>Lofi Ã¢â‚¬Â¢ 80 BPM</p>
           <button class="icon-btn"><i data-lucide="play-circle"></i></button>
         </div>
       </div>
@@ -169,27 +312,27 @@
   </section>
 
   <!-- 3. Browse by Genre -->
-  <section class="container fade-in" style="background-color: var(--bg-secondary); padding: 5rem 2rem; border-radius: var(--border-radius-lg);">
+  <section class="container fade-in" style="padding: 5rem 2rem; ">
     <div class="section-header">
       <h2 class="section-title">Explore Genres</h2>
     </div>
-    <div class="grid-4">
-      <div class="card" style="text-align: center; border-top: 4px solid var(--accent-color);">
-        <h3 class="card-title">Cinematic</h3>
-        <p>1,200+ Tracks</p>
-      </div>
-      <div class="card" style="text-align: center; border-top: 4px solid #10b981;">
-        <h3 class="card-title">Corporate</h3>
-        <p>850+ Tracks</p>
-      </div>
-      <div class="card" style="text-align: center; border-top: 4px solid #f59e0b;">
-        <h3 class="card-title">Pop & Indie</h3>
-        <p>2,100+ Tracks</p>
-      </div>
-      <div class="card" style="text-align: center; border-top: 4px solid #ef4444;">
-        <h3 class="card-title">Rock</h3>
-        <p>540+ Tracks</p>
-      </div>
+    <div class="genre-cloud">
+      <a href="#" class="genre-pill" style="--genre-color: var(--accent-color);">
+        <span class="genre-name">Cinematic</span>
+        <span class="genre-count">1,200+ Tracks</span>
+      </a>
+      <a href="#" class="genre-pill" style="--genre-color: #10b981;">
+        <span class="genre-name">Corporate</span>
+        <span class="genre-count">850+ Tracks</span>
+      </a>
+      <a href="#" class="genre-pill" style="--genre-color: #f59e0b;">
+        <span class="genre-name">Pop & Indie</span>
+        <span class="genre-count">2,100+ Tracks</span>
+      </a>
+      <a href="#" class="genre-pill" style="--genre-color: #ef4444;">
+        <span class="genre-name">Rock</span>
+        <span class="genre-count">540+ Tracks</span>
+      </a>
     </div>
   </section>
 
@@ -201,25 +344,29 @@
     </div>
     <div class="grid-4">
       <div class="card" style="text-align: center;">
-        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=200&q=80&auto=format&fit=crop" alt="Creator 1" class="creator-avatar">
+        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=200&q=80&auto=format&fit=crop"
+          alt="Creator 1" class="creator-avatar">
         <h3 class="card-title">Alex Mercer</h3>
         <p>Cinematic Composer</p>
         <button class="btn btn-secondary" style="width: 100%;">View Profile</button>
       </div>
       <div class="card" style="text-align: center;">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&auto=format&fit=crop" alt="Creator 2" class="creator-avatar">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&auto=format&fit=crop"
+          alt="Creator 2" class="creator-avatar">
         <h3 class="card-title">Elena Rossi</h3>
         <p>Sound Designer</p>
         <button class="btn btn-secondary" style="width: 100%;">View Profile</button>
       </div>
       <div class="card" style="text-align: center;">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&auto=format&fit=crop" alt="Creator 3" class="creator-avatar">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&auto=format&fit=crop"
+          alt="Creator 3" class="creator-avatar">
         <h3 class="card-title">Marcus Chen</h3>
         <p>Electronic Producer</p>
         <button class="btn btn-secondary" style="width: 100%;">View Profile</button>
       </div>
       <div class="card" style="text-align: center;">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80&auto=format&fit=crop" alt="Creator 4" class="creator-avatar">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80&auto=format&fit=crop"
+          alt="Creator 4" class="creator-avatar">
         <h3 class="card-title">Sarah Jenkins</h3>
         <p>Acoustic Artist</p>
         <button class="btn btn-secondary" style="width: 100%;">View Profile</button>
@@ -228,28 +375,31 @@
   </section>
 
   <!-- 5. Premium License Benefits -->
-  <section class="container fade-in" style="background-color: var(--bg-secondary); padding: 5rem 2rem; border-radius: var(--border-radius-lg);">
+  <section class="container fade-in" style="padding: 5rem 2rem; ">
     <div class="section-header">
       <h2 class="section-title">Why Go Premium?</h2>
     </div>
-    <div class="grid-4">
+    <div class="grid-4 premium-features">
       <div class="card">
-        <i data-lucide="shield-check" style="color: var(--accent-color); width: 40px; height: 40px; margin-bottom: 1rem;"></i>
+        <i data-lucide="shield-check"
+          style="color: var(--accent-color); width: 40px; height: 40px; margin: 0 auto 1rem auto; display: block;"></i>
         <h3 class="card-title">Copyright Cleared</h3>
         <p>Never worry about YouTube strikes or DMCA takedowns again.</p>
       </div>
       <div class="card">
-        <i data-lucide="infinity" style="color: var(--accent-color); width: 40px; height: 40px; margin-bottom: 1rem;"></i>
+        <i data-lucide="infinity"
+          style="color: var(--accent-color); width: 40px; height: 40px; margin: 0 auto 1rem auto; display: block;"></i>
         <h3 class="card-title">Unlimited Usage</h3>
         <p>Use tracks across multiple projects without paying extra.</p>
       </div>
       <div class="card">
-        <i data-lucide="mic" style="color: var(--accent-color); width: 40px; height: 40px; margin-bottom: 1rem;"></i>
+        <i data-lucide="mic" style="color: var(--accent-color); width: 40px; height: 40px; margin: 0 auto 1rem auto; display: block;"></i>
         <h3 class="card-title">High Fidelity</h3>
         <p>Download uncompressed WAV files for pristine audio quality.</p>
       </div>
       <div class="card">
-        <i data-lucide="file-audio" style="color: var(--accent-color); width: 40px; height: 40px; margin-bottom: 1rem;"></i>
+        <i data-lucide="file-audio"
+          style="color: var(--accent-color); width: 40px; height: 40px; margin: 0 auto 1rem auto; display: block;"></i>
         <h3 class="card-title">Stems Included</h3>
         <p>Remix and edit with isolated instrument tracks.</p>
       </div>
@@ -265,7 +415,8 @@
     <div class="grid-4">
       <div class="card">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&q=80&auto=format&fit=crop" alt="Podcast Pack">
+          <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&q=80&auto=format&fit=crop"
+            alt="Podcast Pack">
         </div>
         <h3 class="card-title">Podcast Starter Pack</h3>
         <p>Intros, outros, and background loops.</p>
@@ -273,7 +424,8 @@
       </div>
       <div class="card">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&q=80&auto=format&fit=crop" alt="Gaming Pack">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&q=80&auto=format&fit=crop"
+            alt="Gaming Pack">
         </div>
         <h3 class="card-title">Game Dev Assets</h3>
         <p>8-bit sounds, weapon SFX, UI clicks.</p>
@@ -281,7 +433,8 @@
       </div>
       <div class="card">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=80&auto=format&fit=crop" alt="Vlog Pack">
+          <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=80&auto=format&fit=crop"
+            alt="Vlog Pack">
         </div>
         <h3 class="card-title">Vlogger Essentials</h3>
         <p>Upbeat lofi, pop beds, woosh transitions.</p>
@@ -289,7 +442,8 @@
       </div>
       <div class="card">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80&auto=format&fit=crop" alt="Trailer Pack">
+          <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80&auto=format&fit=crop"
+            alt="Trailer Pack">
         </div>
         <h3 class="card-title">Trailer Risers & Hits</h3>
         <p>Massive impacts and tension builders.</p>
@@ -298,37 +452,15 @@
     </div>
   </section>
 
-  <!-- 7. Success Stories -->
-  <section class="container fade-in">
-    <div class="section-header">
-      <h2 class="section-title">Success Stories</h2>
-    </div>
-    <div class="grid-4">
-      <div class="card" style="border: 2px solid var(--accent-color);">
-        <p class="card-body">"Using AudioSync's STEMS allowed us to dynamically mix music for our game based on player actions."</p>
-        <h3 class="card-title" style="font-size: 1rem;">- Studio Pixel</h3>
-      </div>
-      <div class="card">
-        <p class="card-body">"We scored an entire indie feature film using the cinematic library here. Incredible value."</p>
-        <h3 class="card-title" style="font-size: 1rem;">- Horizon Films</h3>
-      </div>
-      <div class="card">
-        <p class="card-body">"The podcast starter packs gave our show a professional edge from day one."</p>
-        <h3 class="card-title" style="font-size: 1rem;">- Tech Talk Weekly</h3>
-      </div>
-      <div class="card">
-        <p class="card-body">"Enterprise licensing saved us from countless legal headaches across our global ad campaigns."</p>
-        <h3 class="card-title" style="font-size: 1rem;">- Global Media Inc.</h3>
-      </div>
-    </div>
-  </section>
-
   <!-- 8. Final CTA -->
-  <section class="container fade-in">
-    <div style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1516280440502-85f543632281?w=1920&q=80&auto=format&fit=crop'); background-size: cover; background-position: center; color: white; padding: 6rem 2rem; border-radius: var(--border-radius-lg); text-align: center;">
+  <section class="container fade-in" style="margin-top: 5rem;">
+    <div
+      style="background: var(--accent-color); border-radius: var(--border-radius-lg); color: white; padding: 6rem 2rem; text-align: center;">
       <h2 class="section-title" style="color: white;">Ready to Upgrade Your Sound?</h2>
-      <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 2rem;">Get unlimited access to thousands of premium tracks and sound effects.</p>
-      <button class="btn btn-primary" style="background: white; color: black; font-weight: 600;">Subscribe Now</button>
+      <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 2rem;">Get unlimited access to thousands
+        of premium tracks and sound effects.</p>
+      <button class="btn btn-primary" style="background: white; color: var(--accent-color); font-weight: 550;">Subscribe
+        Now</button>
     </div>
   </section>
 
@@ -340,6 +472,33 @@
           <i data-lucide="music-4"></i> AudioSync
         </a>
         <p>Your premium source for royalty-free music and professional sound effects.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+            </svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z" />
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+            </svg></a>
+        </div>
       </div>
       <div>
         <h3 class="footer-title">Library</h3>
@@ -365,6 +524,15 @@
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
+      <div>
+        <h3 class="footer-title">Contact Us</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:support@audiosync.com" style="display: flex; align-items: center; gap: 0.5rem;"><i
+                data-lucide="mail" style="width: 16px; height: 16px;"></i> support@audiosync.com</a></li>
+          <li><a href="mailto:licensing@audiosync.com" style="display: flex; align-items: center; gap: 0.5rem;"><i
+                data-lucide="mail" style="width: 16px; height: 16px;"></i> licensing@audiosync.com</a></li>
+        </ul>
+      </div>
     </div>
     <div class="container footer-bottom">
       <p>&copy; 2026 AudioSync. All rights reserved.</p>
@@ -375,5 +543,7 @@
   <script>
     lucide.createIcons();
   </script>
+<script src="assets/js/button-functionality.js"></script>
 </body>
+
 </html>

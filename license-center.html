@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>License Center | AudioSync</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a202c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
@@ -16,7 +17,7 @@
     .license-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
+      
       padding: 2rem;
       box-shadow: var(--shadow-sm);
     }
@@ -43,7 +44,7 @@
     }
     .compare-table th {
       background-color: var(--bg-secondary);
-      font-weight: 600;
+      font-weight: 550;
     }
     .faq-item {
       border-bottom: 1px solid var(--border-color);
@@ -69,14 +70,8 @@
       <a href="index.html" class="brand">
         <i data-lucide="music-4" class="accent"></i> AudioSync
       </a>
-      
-      <button class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-links">
+      <div class="nav-menu">
+        <ul class="nav-links">
         <li class="nav-dropdown">
           <a href="#" class="nav-link dropdown-toggle">Home <i data-lucide="chevron-down"></i></a>
           <ul class="dropdown-menu">
@@ -92,8 +87,7 @@
         <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
       </ul>
-
-      <div class="nav-actions">
+        <div class="nav-actions">
         <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
@@ -102,13 +96,20 @@
         </button>
         <a href="login.html" class="btn btn-primary btn-sm">Login</a>
       </div>
+      </div>
+      <!-- Hamburger Menu for Mobile -->
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
-  <section class="container hero" style="min-height: 40vh; align-items: center; justify-content: center; text-align: center; background: var(--bg-secondary); border-radius: 0 0 40px 40px; margin-bottom: 4rem;">
-    <div class="fade-in">
-      <h1 class="hero-title">License Center</h1>
-      <p class="hero-subtitle">Simple, straightforward licensing for every use case.</p>
+  <section class="hero" style="min-height: 55vh; align-items: center; justify-content: center; text-align: center; margin-bottom: 4rem; background: var(--accent-color); color: var(--text-primary); padding: 8rem 2rem 4rem 2rem; display: flex;">
+    <div class="fade-in" style="width: 100%;">
+      <h1 class="hero-title" style="background: none; -webkit-text-fill-color: var(--text-primary); color: var(--text-primary);">License Center</h1>
+      <p class="hero-subtitle" style="color: var(--text-primary);">Simple, straightforward licensing for every use case.</p>
     </div>
   </section>
 
@@ -121,69 +122,67 @@
     <!-- License Grid for Sections 1-5 -->
     <div class="license-grid fade-in">
       <!-- 1. Personal License -->
-      <div class="license-card">
-        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80" alt="Personal" style="width:100%; height:150px; object-fit:cover; border-radius:var(--border-radius-md); margin-bottom:1rem;">
-        <h3><i data-lucide="user"></i> Personal License</h3>
-        <p>Ideal for personal vlogs, student projects, and non-monetized content.</p>
-        <ul style="margin-left:1.5rem; margin-top:1rem; color:var(--text-secondary);">
-          <li>YouTube (Non-monetized)</li>
-          <li>Personal Social Media</li>
-          <li>School Projects</li>
-        </ul>
+      <div class="license-card" style="padding: 0; overflow: hidden;">
+        <img src="assets/images/Personal License.png" alt="Personal License" style="width:100%; height:150px; object-fit:cover; object-position: center; display: block;">
+        <div style="padding: 2rem; text-align: center;">
+          <h3 style="color: var(--accent-color); margin-bottom: 1rem; display: flex; justify-content: center; align-items: center; gap: 0.5rem;"><i data-lucide="user"></i> Personal License</h3>
+          <p style="min-height: 4.5rem;">Ideal for personal vlogs, student projects, and non-monetized content.</p>
+          <ul style="list-style: none; padding: 0; margin-top: 1rem; color:var(--text-secondary);">
+            <li>YouTube (Non-monetized)</li>
+            <li>Personal Social Media</li>
+            <li>School Projects</li>
+          </ul>
+        </div>
       </div>
 
       <!-- 2. Commercial License -->
-      <div class="license-card">
-        <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5956093?w=400&q=80" alt="Commercial" style="width:100%; height:150px; object-fit:cover; border-radius:var(--border-radius-md); margin-bottom:1rem;">
-        <h3><i data-lucide="briefcase"></i> Commercial License</h3>
-        <p>For freelance creators, digital agencies, and monetized social content.</p>
-        <ul style="margin-left:1.5rem; margin-top:1rem; color:var(--text-secondary);">
-          <li>Monetized YouTube</li>
-          <li>Digital Ads</li>
-          <li>Client Videos</li>
-        </ul>
+      <div class="license-card" style="padding: 0; overflow: hidden;">
+        <img src="assets/images/Commercial License.png" alt="Commercial License" style="width:100%; height:150px; object-fit:cover; object-position: center; display: block;">
+        <div style="padding: 2rem; text-align: center;">
+          <h3 style="color: var(--accent-color); margin-bottom: 1rem; display: flex; justify-content: center; align-items: center; gap: 0.5rem;"><i data-lucide="briefcase"></i> Commercial License</h3>
+          <p style="min-height: 4.5rem;">For freelance creators, digital agencies, and monetized social content.</p>
+          <ul style="list-style: none; padding: 0; margin-top: 1rem; color:var(--text-secondary);">
+            <li>Monetized YouTube</li>
+            <li>Digital Ads</li>
+            <li>Client Videos</li>
+          </ul>
+        </div>
       </div>
 
       <!-- 3. Broadcast License -->
-      <div class="license-card">
-        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80" alt="Broadcast" style="width:100%; height:150px; object-fit:cover; border-radius:var(--border-radius-md); margin-bottom:1rem;">
-        <h3><i data-lucide="tv"></i> Broadcast License</h3>
-        <p>Local, national, or global TV and radio broadcasting clearance.</p>
-        <ul style="margin-left:1.5rem; margin-top:1rem; color:var(--text-secondary);">
-          <li>Television Commercials</li>
-          <li>Radio Spots</li>
-          <li>Public Performance</li>
-        </ul>
+      <div class="license-card" style="padding: 0; overflow: hidden;">
+        <img src="assets/images/Broadcast License.png" alt="Broadcast License" style="width:100%; height:150px; object-fit:cover; object-position: center; display: block;">
+        <div style="padding: 2rem; text-align: center;">
+          <h3 style="color: var(--accent-color); margin-bottom: 1rem; display: flex; justify-content: center; align-items: center; gap: 0.5rem;"><i data-lucide="tv"></i> Broadcast License</h3>
+          <p style="min-height: 4.5rem;">Local, national, or global TV and radio broadcasting clearance.</p>
+          <ul style="list-style: none; padding: 0; margin-top: 1rem; color:var(--text-secondary);">
+            <li>Television Commercials</li>
+            <li>Radio Spots</li>
+            <li>Public Performance</li>
+          </ul>
+        </div>
       </div>
 
       <!-- 4. Film License -->
-      <div class="license-card">
-        <img src="https://images.unsplash.com/photo-1516280440502-85f543632281?w=400&q=80" alt="Film" style="width:100%; height:150px; object-fit:cover; border-radius:var(--border-radius-md); margin-bottom:1rem;">
-        <h3><i data-lucide="film"></i> Film License</h3>
-        <p>Theatrical releases, film festivals, and streaming platforms (Netflix, Hulu).</p>
-        <ul style="margin-left:1.5rem; margin-top:1rem; color:var(--text-secondary);">
-          <li>Indie & Feature Films</li>
-          <li>SVOD/VOD Streaming</li>
-          <li>Festival Screenings</li>
-        </ul>
+      <div class="license-card" style="padding: 0; overflow: hidden;">
+        <img src="assets/images/Film License.png" alt="Film License" style="width:100%; height:150px; object-fit:cover; object-position: center; display: block;">
+        <div style="padding: 2rem; text-align: center;">
+          <h3 style="color: var(--accent-color); margin-bottom: 1rem; display: flex; justify-content: center; align-items: center; gap: 0.5rem;"><i data-lucide="film"></i> Film License</h3>
+          <p style="min-height: 4.5rem;">Theatrical releases, film festivals, and streaming platforms (Netflix, Hulu).</p>
+          <ul style="list-style: none; padding: 0; margin-top: 1rem; color:var(--text-secondary);">
+            <li>Indie & Feature Films</li>
+            <li>SVOD/VOD Streaming</li>
+            <li>Festival Screenings</li>
+          </ul>
+        </div>
       </div>
 
-      <!-- 5. Gaming License -->
-      <div class="license-card">
-        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&q=80" alt="Gaming" style="width:100%; height:150px; object-fit:cover; border-radius:var(--border-radius-md); margin-bottom:1rem;">
-        <h3><i data-lucide="gamepad-2"></i> Gaming License</h3>
-        <p>Audio integration for video games, mobile apps, and interactive software.</p>
-        <ul style="margin-left:1.5rem; margin-top:1rem; color:var(--text-secondary);">
-          <li>Console & PC Games</li>
-          <li>Mobile Apps</li>
-          <li>Software UI</li>
-        </ul>
-      </div>
+
     </div>
   </div>
 
   <!-- 6. Subscription Plans -->
-  <section class="container fade-in" style="background-color: var(--bg-secondary); padding: 5rem 2rem; border-radius: var(--border-radius-lg); margin-bottom: 4rem;">
+  <section class="container fade-in" style="padding: 5rem 2rem; margin-bottom: 4rem;">
     <div style="display: flex; gap: 4rem; align-items: center; flex-wrap: wrap;">
       <div style="flex: 1;">
         <h2 class="section-title">Subscription Plans</h2>
@@ -191,7 +190,7 @@
         <button class="btn btn-primary" style="margin-top: 1rem;">View Pricing</button>
       </div>
       <div style="flex: 1;">
-        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="Subscription" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="Subscription" style="box-shadow: var(--shadow-lg);">
       </div>
     </div>
   </section>
@@ -258,22 +257,34 @@
     <div class="section-header">
       <h2 class="section-title">Frequently Asked Questions</h2>
     </div>
-    <div class="faq-item">
-      <div class="faq-q"><i data-lucide="help-circle" style="color: var(--accent-color);"></i> What does Royalty-Free mean?</div>
-      <p>Royalty-Free means you only pay once for a license and can use the music for as long as you want within the terms of that license, without paying additional ongoing fees based on views or plays.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q"><i data-lucide="help-circle" style="color: var(--accent-color);"></i> Can I use the music on YouTube?</div>
-      <p>Yes. If you have a Commercial license or higher, you can monetize your YouTube videos. We will automatically clear any Content ID claims on your registered channel.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q"><i data-lucide="help-circle" style="color: var(--accent-color);"></i> What happens if I cancel my subscription?</div>
-      <p>Any projects you published while your subscription was active remain permanently cleared. However, you cannot use downloaded tracks in new projects after your subscription ends.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q"><i data-lucide="help-circle" style="color: var(--accent-color);"></i> Do you offer stems?</div>
-      <p>Yes, stems (isolated instruments) are included with Commercial, Broadcast, and Film/Gaming licenses, as well as premium subscription tiers.</p>
-    </div>
+    <details class="faq-item" style="cursor: pointer; padding-bottom: 1rem;">
+      <summary class="faq-q" style="font-weight: 550; font-size: 1.1rem; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between;">
+        What does Royalty-Free mean?
+        <i data-lucide="chevron-down" style="color: var(--accent-color);"></i>
+      </summary>
+      <p style="margin-top: 1rem;">Royalty-Free means you only pay once for a license and can use the music for as long as you want within the terms of that license, without paying additional ongoing fees based on views or plays.</p>
+    </details>
+    <details class="faq-item" style="cursor: pointer; padding-bottom: 1rem;">
+      <summary class="faq-q" style="font-weight: 550; font-size: 1.1rem; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between;">
+        Can I use the music on YouTube?
+        <i data-lucide="chevron-down" style="color: var(--accent-color);"></i>
+      </summary>
+      <p style="margin-top: 1rem;">Yes. If you have a Commercial license or higher, you can monetize your YouTube videos. We will automatically clear any Content ID claims on your registered channel.</p>
+    </details>
+    <details class="faq-item" style="cursor: pointer; padding-bottom: 1rem;">
+      <summary class="faq-q" style="font-weight: 550; font-size: 1.1rem; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between;">
+        What happens if I cancel my subscription?
+        <i data-lucide="chevron-down" style="color: var(--accent-color);"></i>
+      </summary>
+      <p style="margin-top: 1rem;">Any projects you published while your subscription was active remain permanently cleared. However, you cannot use downloaded tracks in new projects after your subscription ends.</p>
+    </details>
+    <details class="faq-item" style="cursor: pointer; padding-bottom: 1rem;">
+      <summary class="faq-q" style="font-weight: 550; font-size: 1.1rem; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between;">
+        Do you offer stems?
+        <i data-lucide="chevron-down" style="color: var(--accent-color);"></i>
+      </summary>
+      <p style="margin-top: 1rem;">Yes, stems (isolated instruments) are included with Commercial, Broadcast, and Film/Gaming licenses, as well as premium subscription tiers.</p>
+    </details>
   </section>
 
   <!-- Footer -->
@@ -284,6 +295,12 @@
           <i data-lucide="music-4"></i> AudioSync
         </a>
         <p>Your premium source for royalty-free music and professional sound effects.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+        </div>
       </div>
       <div>
         <h3 class="footer-title">Library</h3>
@@ -309,6 +326,13 @@
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
+      <div>
+        <h3 class="footer-title">Contact Us</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:support@audiosync.com" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> support@audiosync.com</a></li>
+          <li><a href="mailto:licensing@audiosync.com" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> licensing@audiosync.com</a></li>
+        </ul>
+      </div>
     </div>
     <div class="container footer-bottom">
       <p>&copy; 2026 AudioSync. All rights reserved.</p>
@@ -319,5 +343,15 @@
   <script>
     lucide.createIcons();
   </script>
+<script src="assets/js/button-functionality.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

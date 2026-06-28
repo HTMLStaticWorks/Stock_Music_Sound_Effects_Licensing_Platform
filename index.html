@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stock Music & Sound Effects | Premium Audio Licensing</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a202c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>">
   <meta name="description" content="Discover, preview, and license royalty-free music tracks and sound effects for your creative projects.">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -20,16 +21,10 @@
         <i data-lucide="music-4" class="accent"></i> AudioSync
       </a>
       
-      <!-- Hamburger Menu for Mobile -->
-      <button class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-links">
+      <div class="nav-menu">
+        <ul class="nav-links">
         <li class="nav-dropdown">
-          <a href="#" class="nav-link dropdown-toggle">Home <i data-lucide="chevron-down"></i></a>
+          <a href="#" class="nav-link dropdown-toggle active">Home <i data-lucide="chevron-down"></i></a>
           <ul class="dropdown-menu">
             <li><a href="index.html" class="nav-link active">Home 1</a></li>
             <li><a href="home-2.html" class="nav-link">Home 2</a></li>
@@ -43,8 +38,7 @@
         <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
       </ul>
-
-      <div class="nav-actions">
+        <div class="nav-actions">
         <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
@@ -53,6 +47,13 @@
         </button>
         <a href="login.html" class="btn btn-primary btn-sm">Login</a>
       </div>
+      </div>
+      <!-- Hamburger Menu for Mobile -->
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -90,7 +91,7 @@
       <!-- Card 1 -->
       <div class="card">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80&auto=format&fit=crop" alt="Cinematic Score">
+          <img src="assets/images/cinematic_scores.png" alt="Cinematic Score">
         </div>
         <h3 class="card-title">Cinematic Scores</h3>
         <div class="card-body">
@@ -103,7 +104,7 @@
       <!-- Card 2 -->
       <div class="card">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5956093?w=400&q=80&auto=format&fit=crop" alt="Corporate Pop">
+          <img src="assets/images/corporate_pop.png" alt="Corporate Pop">
         </div>
         <h3 class="card-title">Corporate Pop</h3>
         <div class="card-body">
@@ -116,7 +117,7 @@
       <!-- Card 3 -->
       <div class="card">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80&auto=format&fit=crop" alt="Electronic Dance">
+          <img src="assets/images/electronic_dance.png" alt="Electronic Dance">
         </div>
         <h3 class="card-title">Electronic Dance</h3>
         <div class="card-body">
@@ -129,7 +130,7 @@
       <!-- Card 4 -->
       <div class="card">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1516280440502-85f543632281?w=400&q=80&auto=format&fit=crop" alt="Lo-Fi Chill">
+          <img src="assets/images/lo_fi_chill.png" alt="Lo-Fi Chill">
         </div>
         <h3 class="card-title">Lo-Fi Chill</h3>
         <div class="card-body">
@@ -143,16 +144,36 @@
   </section>
 
   <!-- 3. Browse by Mood -->
-  <section class="container fade-in" style="background-color: var(--bg-secondary); padding: 5rem 2rem; border-radius: var(--border-radius-lg);">
+  <section class="container fade-in" style="padding: 5rem 2rem; ">
     <div class="section-header">
       <h2 class="section-title">Browse by Mood</h2>
       <p class="section-subtitle">Find the perfect tone for your story.</p>
     </div>
-    <div class="grid-4">
-      <div class="card"><h3 class="card-title" style="text-align: center;"><i data-lucide="sun"></i><br>Happy & Upbeat</h3></div>
-      <div class="card"><h3 class="card-title" style="text-align: center;"><i data-lucide="cloud-rain"></i><br>Sad & Emotional</h3></div>
-      <div class="card"><h3 class="card-title" style="text-align: center;"><i data-lucide="zap"></i><br>Energetic & Fast</h3></div>
-      <div class="card"><h3 class="card-title" style="text-align: center;"><i data-lucide="moon"></i><br>Calm & Relaxing</h3></div>
+    <div class="grid-4" style="gap: 3rem; justify-items: center;">
+      <div class="mood-sphere">
+        <div class="sphere-content">
+          <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?w=100&h=100&fit=crop" alt="Happy">
+          <span>Happy<br>Upbeat</span>
+        </div>
+      </div>
+      <div class="mood-sphere">
+        <div class="sphere-content">
+          <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=100&h=100&fit=crop" alt="Sad">
+          <span>Sad<br>Emotional</span>
+        </div>
+      </div>
+      <div class="mood-sphere">
+        <div class="sphere-content">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=100&h=100&fit=crop" alt="Energetic">
+          <span>Energetic<br>Fast</span>
+        </div>
+      </div>
+      <div class="mood-sphere">
+        <div class="sphere-content">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=100&h=100&fit=crop" alt="Calm">
+          <span>Calm<br>Relaxing</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -162,26 +183,50 @@
       <h2 class="section-title">Premium Sound Effects</h2>
       <p class="section-subtitle">Enhance your production value with professional SFX.</p>
     </div>
-    <div class="grid-4">
-      <div class="card">
-        <h3 class="card-title">Foley & Ambience</h3>
-        <div class="card-body"><p>Realistic environment sounds.</p></div>
-        <div class="card-footer"><button class="btn btn-secondary">Preview</button></div>
+    <div class="sfx-hex-grid">
+      <div class="sfx-hex-wrapper">
+        <div class="sfx-hex">
+          <div class="sfx-hex-bg">
+            <div class="sfx-hex-content">
+              <h3>Foley & Ambience</h3>
+              <p>Realistic environment sounds.</p>
+              <button class="btn btn-secondary btn-sm">Preview</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3 class="card-title">UI & Notifications</h3>
-        <div class="card-body"><p>Clicks, pops, and app sounds.</p></div>
-        <div class="card-footer"><button class="btn btn-secondary">Preview</button></div>
+      <div class="sfx-hex-wrapper">
+        <div class="sfx-hex">
+          <div class="sfx-hex-bg">
+            <div class="sfx-hex-content">
+              <h3>UI & Notifications</h3>
+              <p>Clicks, pops, and app sounds.</p>
+              <button class="btn btn-secondary btn-sm">Preview</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3 class="card-title">Sci-Fi & Magic</h3>
-        <div class="card-body"><p>Futuristic and fantasy audio elements.</p></div>
-        <div class="card-footer"><button class="btn btn-secondary">Preview</button></div>
+      <div class="sfx-hex-wrapper">
+        <div class="sfx-hex">
+          <div class="sfx-hex-bg">
+            <div class="sfx-hex-content">
+              <h3>Sci-Fi & Magic</h3>
+              <p>Futuristic and fantasy audio elements.</p>
+              <button class="btn btn-secondary btn-sm">Preview</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3 class="card-title">Impacts & Transitions</h3>
-        <div class="card-body"><p>Whooshes, hits, and cinematic risers.</p></div>
-        <div class="card-footer"><button class="btn btn-secondary">Preview</button></div>
+      <div class="sfx-hex-wrapper">
+        <div class="sfx-hex">
+          <div class="sfx-hex-bg">
+            <div class="sfx-hex-content">
+              <h3>Impacts & Transitions</h3>
+              <p>Whooshes, hits, and cinematic risers.</p>
+              <button class="btn btn-secondary btn-sm">Preview</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -192,22 +237,46 @@
       <h2 class="section-title">Flexible Licensing</h2>
       <p class="section-subtitle">Choose the rights that fit your needs.</p>
     </div>
-    <div class="grid-4">
-      <div class="card">
-        <h3 class="card-title">Personal Use</h3>
-        <div class="card-body"><p>Perfect for personal vlogs and non-monetized content.</p></div>
+    <div class="license-accordion">
+      <div class="license-panel">
+        <img src="assets/images/personal_license.png" alt="Personal" class="license-panel-bg">
+        <div class="license-content">
+          <h3 class="license-title"><i data-lucide="user"></i> Personal</h3>
+          <div class="license-details">
+            <p>Perfect for personal vlogs and non-monetized content.</p>
+            <button class="btn btn-secondary btn-sm">Select</button>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3 class="card-title">Commercial</h3>
-        <div class="card-body"><p>For digital ads, client work, and monetized videos.</p></div>
+      <div class="license-panel">
+        <img src="assets/images/commercial_license.png" alt="Commercial" class="license-panel-bg">
+        <div class="license-content">
+          <h3 class="license-title"><i data-lucide="briefcase"></i> Commercial</h3>
+          <div class="license-details">
+            <p>For digital ads, client work, and monetized videos.</p>
+            <button class="btn btn-secondary btn-sm">Select</button>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3 class="card-title">Broadcast</h3>
-        <div class="card-body"><p>Full clearance for TV, radio, and theatrical release.</p></div>
+      <div class="license-panel">
+        <img src="assets/images/broadcast_license.png" alt="Broadcast" class="license-panel-bg">
+        <div class="license-content">
+          <h3 class="license-title"><i data-lucide="radio"></i> Broadcast</h3>
+          <div class="license-details">
+            <p>Full clearance for TV, radio, and theatrical release.</p>
+            <button class="btn btn-secondary btn-sm">Select</button>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3 class="card-title">Enterprise</h3>
-        <div class="card-body"><p>Custom solutions for large agencies and platforms.</p></div>
+      <div class="license-panel">
+        <img src="assets/images/enterprise_license.png" alt="Enterprise" class="license-panel-bg">
+        <div class="license-content">
+          <h3 class="license-title"><i data-lucide="globe"></i> Enterprise</h3>
+          <div class="license-details">
+            <p>Custom solutions for large agencies and platforms.</p>
+            <button class="btn btn-secondary btn-sm">Select</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -220,21 +289,33 @@
     </div>
     <div class="grid-4">
       <div class="card">
+        <div class="card-img-wrapper">
+          <img src="assets/images/neon_nights.png" alt="Neon Nights">
+        </div>
         <h3 class="card-title">Neon Nights</h3>
         <div class="card-body"><p>Synthwave - 120 BPM</p></div>
         <div class="card-footer"><button class="btn btn-primary">License</button></div>
       </div>
       <div class="card">
+        <div class="card-img-wrapper">
+          <img src="assets/images/acoustic_sunrise.png" alt="Acoustic Sunrise">
+        </div>
         <h3 class="card-title">Acoustic Sunrise</h3>
         <div class="card-body"><p>Folk - 85 BPM</p></div>
         <div class="card-footer"><button class="btn btn-primary">License</button></div>
       </div>
       <div class="card">
+        <div class="card-img-wrapper">
+          <img src="assets/images/urban_flow.png" alt="Urban Flow">
+        </div>
         <h3 class="card-title">Urban Flow</h3>
         <div class="card-body"><p>Hip Hop - 90 BPM</p></div>
         <div class="card-footer"><button class="btn btn-primary">License</button></div>
       </div>
       <div class="card">
+        <div class="card-img-wrapper">
+          <img src="assets/images/epic_trailer.png" alt="Epic Trailer">
+        </div>
         <h3 class="card-title">Epic Trailer</h3>
         <div class="card-body"><p>Orchestral - 130 BPM</p></div>
         <div class="card-footer"><button class="btn btn-primary">License</button></div>
@@ -243,26 +324,46 @@
   </section>
 
   <!-- 7. Customer Testimonials -->
-  <section class="container fade-in" style="background-color: var(--bg-secondary); padding: 5rem 2rem; border-radius: var(--border-radius-lg);">
+  <section class="container fade-in" style="padding: 5rem 2rem; ">
     <div class="section-header">
       <h2 class="section-title">What Creators Say</h2>
     </div>
-    <div class="grid-4">
-      <div class="card">
-        <p class="card-body">"AudioSync has completely elevated our agency's video production. The quality is unmatched."</p>
-        <h3 class="card-title" style="font-size: 1rem;">- Sarah J., Producer</h3>
-      </div>
-      <div class="card">
-        <p class="card-body">"Finding the right track used to take hours. Now it takes minutes."</p>
-        <h3 class="card-title" style="font-size: 1rem;">- Mike T., YouTuber</h3>
-      </div>
-      <div class="card">
-        <p class="card-body">"The SFX library is incredibly deep and highly organized. Love the interface."</p>
-        <h3 class="card-title" style="font-size: 1rem;">- Elena R., Sound Editor</h3>
-      </div>
-      <div class="card">
-        <p class="card-body">"Simple licensing terms make legal clearance a breeze."</p>
-        <h3 class="card-title" style="font-size: 1rem;">- David K., Filmmaker</h3>
+    <div class="testimonial-marquee">
+      <div class="marquee-track">
+        <!-- First Set -->
+        <div class="testimonial-bubble">
+          <p class="testimonial-text">"AudioSync has completely elevated our agency's video production. The quality is unmatched."</p>
+          <p class="testimonial-author">- Sarah J., Producer</p>
+        </div>
+        <div class="testimonial-bubble">
+          <p class="testimonial-text">"Finding the right track used to take hours. Now it takes minutes."</p>
+          <p class="testimonial-author">- Mike T., YouTuber</p>
+        </div>
+        <div class="testimonial-bubble">
+          <p class="testimonial-text">"The SFX library is incredibly deep and highly organized. Love the interface."</p>
+          <p class="testimonial-author">- Elena R., Sound Editor</p>
+        </div>
+        <div class="testimonial-bubble">
+          <p class="testimonial-text">"Simple licensing terms make legal clearance a breeze."</p>
+          <p class="testimonial-author">- David K., Filmmaker</p>
+        </div>
+        <!-- Duplicated Set for Infinite Scroll -->
+        <div class="testimonial-bubble" aria-hidden="true">
+          <p class="testimonial-text">"AudioSync has completely elevated our agency's video production. The quality is unmatched."</p>
+          <p class="testimonial-author">- Sarah J., Producer</p>
+        </div>
+        <div class="testimonial-bubble" aria-hidden="true">
+          <p class="testimonial-text">"Finding the right track used to take hours. Now it takes minutes."</p>
+          <p class="testimonial-author">- Mike T., YouTuber</p>
+        </div>
+        <div class="testimonial-bubble" aria-hidden="true">
+          <p class="testimonial-text">"The SFX library is incredibly deep and highly organized. Love the interface."</p>
+          <p class="testimonial-author">- Elena R., Sound Editor</p>
+        </div>
+        <div class="testimonial-bubble" aria-hidden="true">
+          <p class="testimonial-text">"Simple licensing terms make legal clearance a breeze."</p>
+          <p class="testimonial-author">- David K., Filmmaker</p>
+        </div>
       </div>
     </div>
   </section>
@@ -284,6 +385,12 @@
           <i data-lucide="music-4"></i> AudioSync
         </a>
         <p>Your premium source for royalty-free music and professional sound effects.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+        </div>
       </div>
       <div>
         <h3 class="footer-title">Library</h3>
@@ -309,6 +416,13 @@
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
+      <div>
+        <h3 class="footer-title">Contact Us</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:support@audiosync.com" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> support@audiosync.com</a></li>
+          <li><a href="mailto:licensing@audiosync.com" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> licensing@audiosync.com</a></li>
+        </ul>
+      </div>
     </div>
     <div class="container footer-bottom">
       <p>&copy; 2026 AudioSync. All rights reserved.</p>
@@ -319,5 +433,15 @@
   <script>
     lucide.createIcons();
   </script>
+<script src="assets/js/button-functionality.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

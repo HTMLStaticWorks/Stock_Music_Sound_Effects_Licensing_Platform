@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
      Theme & RTL Initialization
      ========================================================================== */
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
      Hamburger Menu
      ========================================================================== */
   const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+  const navLinks = document.querySelector('.nav-menu');
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
@@ -178,3 +178,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | AudioSync</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a202c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
@@ -12,43 +13,143 @@
       gap: 4rem;
       align-items: center;
       margin-bottom: 5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: var(--shadow-md);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .service-section:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-color: var(--accent-color);
     }
     .service-section:nth-child(even) {
       flex-direction: row-reverse;
     }
     .service-img {
       flex: 1;
-      border-radius: var(--border-radius-lg);
+      border-radius: 16px;
       box-shadow: var(--shadow-lg);
       aspect-ratio: 16/9;
       object-fit: cover;
+      transition: transform 0.5s ease;
+      overflow: hidden;
+    }
+    .service-section:hover .service-img {
+      transform: scale(1.02);
     }
     .service-content {
-      flex: 1;
+      flex: 1.2;
+      padding: 1rem;
+    }
+    .custom-licensing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: left;
+      margin-bottom: 4rem;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .custom-licensing-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .custom-licensing-grid > div:nth-child(3) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 1rem);
+      }
     }
     .service-list {
-      margin-left: 1.5rem;
-      margin-bottom: 1.5rem;
+      margin-left: 2rem;
+      margin-bottom: 2rem;
+      list-style-type: none;
     }
     .service-list li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       position: relative;
+      font-size: 1.05rem;
     }
     .service-list li::before {
-      content: "✓";
-      color: var(--accent-color);
+      content: "\2713";
+      color: white;
+      background: var(--accent-color);
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
-      left: -1.5rem;
-      font-weight: bold;
+      left: -2.5rem;
+      top: -2px;
+      font-size: 0.8rem;
+      font-weight: 550;
     }
     [dir="rtl"] .service-section:nth-child(even) { flex-direction: row; }
     [dir="rtl"] .service-section:nth-child(odd) { flex-direction: row-reverse; }
-    [dir="rtl"] .service-list { margin-left: 0; margin-right: 1.5rem; }
-    [dir="rtl"] .service-list li::before { left: auto; right: -1.5rem; }
+    [dir="rtl"] .service-list { margin-left: 0; margin-right: 2.5rem; }
+    [dir="rtl"] .service-list li::before { left: auto; right: -2.5rem; }
     
     @media (max-width: 992px) {
       .service-section, .service-section:nth-child(even) {
         flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+      }
+      .service-content {
+        padding: 0;
+      }
+      .service-content .btn {
+        display: block;
+        margin: 0 auto;
+        width: max-content;
+      }
+      .service-img {
+        width: 100%;
+      }
+      .service-list {
+        margin-left: 0;
+        padding-left: 0;
+      }
+      .service-list li {
+        padding-left: 2.5rem;
+      }
+      .service-list li::before {
+        left: 0;
+      }
+      .custom-licensing-banner {
+        padding: 2rem 1.5rem !important;
+      }
+      .custom-licensing-banner > div {
+        text-align: center !important;
+        gap: 1.5rem !important;
+      }
+      .custom-licensing-banner > div > div {
+        padding: 1.5rem !important;
+      }
+      .custom-licensing-banner > div > div i {
+        display: block;
+        margin: 0 auto 1.5rem auto !important;
+      }
+    }
+    @media (max-width: 576px) {
+      .service-section, .service-section:nth-child(even) {
+        padding: 1.25rem 1rem;
+      }
+      .service-list {
+        margin-left: 0;
+        padding-left: 0;
+      }
+      .service-list li {
+        padding-left: 2.5rem;
+      }
+      .service-list li::before {
+        left: 0;
+      }
+      .custom-licensing-banner {
+        padding: 2rem 1rem !important;
       }
     }
   </style>
@@ -63,14 +164,8 @@
       <a href="index.html" class="brand">
         <i data-lucide="music-4" class="accent"></i> AudioSync
       </a>
-      
-      <button class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-links">
+      <div class="nav-menu">
+        <ul class="nav-links">
         <li class="nav-dropdown">
           <a href="#" class="nav-link dropdown-toggle">Home <i data-lucide="chevron-down"></i></a>
           <ul class="dropdown-menu">
@@ -86,8 +181,7 @@
         <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
       </ul>
-
-      <div class="nav-actions">
+        <div class="nav-actions">
         <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
@@ -96,13 +190,20 @@
         </button>
         <a href="login.html" class="btn btn-primary btn-sm">Login</a>
       </div>
+      </div>
+      <!-- Hamburger Menu for Mobile -->
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
-  <section class="container hero" style="min-height: 40vh; align-items: center; justify-content: center; text-align: center; background: var(--bg-secondary); border-radius: 0 0 40px 40px; margin-bottom: 4rem;">
-    <div class="fade-in">
-      <h1 class="hero-title">Our Services</h1>
-      <p class="hero-subtitle">Comprehensive audio solutions for every type of creator.</p>
+  <section class="hero" style="min-height: 55vh; align-items: center; justify-content: center; text-align: center; margin-bottom: 4rem; background: var(--accent-color); color: var(--text-primary); padding: 8rem 2rem 4rem 2rem; display: flex;">
+    <div class="fade-in" style="width: 100%;">
+      <h1 class="hero-title" style="background: none; -webkit-text-fill-color: var(--text-primary); color: var(--text-primary);">Our Services</h1>
+      <p class="hero-subtitle" style="color: var(--text-primary);">Comprehensive audio solutions for every type of creator.</p>
     </div>
   </section>
 
@@ -155,10 +256,10 @@
     <!-- 4. Game Audio Assets -->
     <div class="service-section">
       <!-- Re-using a previous structure without an image as we need 6 images for 8 sections -->
-      <div class="service-content" style="flex: 2;">
+      <div class="service-content" style="flex: 2; text-align: center; display: flex; flex-direction: column; align-items: center;">
         <h2 class="section-title">Game Audio Assets</h2>
-        <p>Dynamic audio assets designed for interactive media. From 8-bit retro to massive AAA orchestral scores.</p>
-        <ul class="service-list">
+        <p style="max-width: 600px; margin-bottom: 2rem;">Dynamic audio assets designed for interactive media. From 8-bit retro to massive AAA orchestral scores.</p>
+        <ul class="service-list" style="text-align: left; display: inline-block; margin: 0 auto 2rem auto;">
           <li><strong>Features:</strong> Middleware-ready files (FMOD/Wwise compatible), seamless loops.</li>
           <li><strong>Deliverables:</strong> Interactive music stems and adaptive SFX.</li>
           <li><strong>Expected Benefits:</strong> Immersive gameplay experiences and easy integration.</li>
@@ -169,7 +270,7 @@
 
     <!-- 5. Commercial License -->
     <div class="service-section">
-      <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5956093?w=600&q=80&auto=format&fit=crop" alt="Commercial License" class="service-img">
+      <img src="assets/images/Commercial License.png" alt="Commercial License" class="service-img">
       <div class="service-content">
         <h2 class="section-title">Commercial License</h2>
         <p>Secure full rights for advertising, client work, and monetized digital content across all platforms.</p>
@@ -198,32 +299,65 @@
     </div>
 
     <!-- 7. Custom Licensing -->
-    <div class="service-section">
-      <!-- No image here, keeping total to 6 -->
-      <div class="service-content" style="flex: 2;">
-        <h2 class="section-title">Custom Licensing</h2>
-        <p>Need something unique? We offer bespoke music composition and custom sound design tailored to your brief.</p>
-        <ul class="service-list">
-          <li><strong>Features:</strong> 1-on-1 consultation, exclusive ownership rights available.</li>
-          <li><strong>Deliverables:</strong> Mastered stems and final mixdowns.</li>
-          <li><strong>Expected Benefits:</strong> A 100% unique sonic identity for your brand.</li>
-        </ul>
-        <button class="btn btn-primary">Contact Custom Team</button>
+    <div class="custom-licensing-banner" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-surface)); border-radius: 30px; padding: 4rem 2rem; text-align: center; margin-bottom: 6rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
+      <h2 class="section-title" style="font-size: 2.8rem; margin-bottom: 1rem;">Custom Licensing</h2>
+      <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem;">Need something unique? We offer bespoke music composition and custom sound design tailored to your brief.</p>
+      
+      <div class="custom-licensing-grid">
+        <div style="background: var(--bg-card); padding: 2.5rem; border-radius: 20px; box-shadow: var(--shadow-sm); transition: transform 0.3s;">
+          <i data-lucide="headphones" style="color: var(--accent-color); width: 36px; height: 36px; margin-bottom: 1.5rem;"></i>
+          <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Features</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6;">1-on-1 consultation, exclusive ownership rights available.</p>
+        </div>
+        <div style="background: var(--bg-card); padding: 2.5rem; border-radius: 20px; box-shadow: var(--shadow-sm); transition: transform 0.3s;">
+          <i data-lucide="file-audio" style="color: var(--accent-color); width: 36px; height: 36px; margin-bottom: 1.5rem;"></i>
+          <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Deliverables</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6;">Mastered stems and final mixdowns for your projects.</p>
+        </div>
+        <div style="background: var(--bg-card); padding: 2.5rem; border-radius: 20px; box-shadow: var(--shadow-sm); transition: transform 0.3s;">
+          <i data-lucide="sparkles" style="color: var(--accent-color); width: 36px; height: 36px; margin-bottom: 1.5rem;"></i>
+          <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Benefits</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6;">A 100% unique sonic identity tailored for your brand.</p>
+        </div>
       </div>
+      
+      <button class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 3rem; border-radius: 50px;">Contact Custom Team</button>
     </div>
 
     <!-- 8. Enterprise Solutions -->
-    <div class="service-section">
-      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80&auto=format&fit=crop" alt="Enterprise Solutions" class="service-img">
-      <div class="service-content">
-        <h2 class="section-title">Enterprise Solutions</h2>
-        <p>Uncapped access and team collaboration tools for large agencies, production houses, and broadcasters.</p>
-        <ul class="service-list">
-          <li><strong>Features:</strong> Multi-seat accounts, API access, dedicated account manager.</li>
-          <li><strong>Deliverables:</strong> Global blanket licenses and custom invoicing.</li>
-          <li><strong>Expected Benefits:</strong> Streamlined workflows and maximum legal security.</li>
-        </ul>
-        <button class="btn btn-primary">Talk to Sales</button>
+    <div class="enterprise-section" style="display: flex; flex-wrap: wrap; background: var(--bg-surface); border-radius: 30px; overflow: hidden; box-shadow: var(--shadow-xl); margin-bottom: 4rem; border: 1px solid var(--border-color);">
+      <div style="flex: 1 1 400px; padding: 4rem;">
+        <h2 class="section-title" style="font-size: 2.8rem; margin-bottom: 1.5rem;">Enterprise Solutions</h2>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 3rem; line-height: 1.7;">Uncapped access and team collaboration tools for large agencies, production houses, and broadcasters.</p>
+        
+        <div style="margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1.2rem;">
+          <i data-lucide="users" style="color: var(--accent-color); width: 28px; height: 28px; flex-shrink: 0; margin-top: 2px;"></i>
+          <div>
+            <h4 style="margin-bottom: 0.3rem; font-size: 1.2rem;">Multi-seat Accounts</h4>
+            <p style="color: var(--text-secondary); font-size: 1rem;">API access & dedicated account manager.</p>
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1.2rem;">
+          <i data-lucide="globe" style="color: var(--accent-color); width: 28px; height: 28px; flex-shrink: 0; margin-top: 2px;"></i>
+          <div>
+            <h4 style="margin-bottom: 0.3rem; font-size: 1.2rem;">Global Coverage</h4>
+            <p style="color: var(--text-secondary); font-size: 1rem;">Global blanket licenses and custom invoicing.</p>
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 3rem; display: flex; align-items: flex-start; gap: 1.2rem;">
+          <i data-lucide="shield-check" style="color: var(--accent-color); width: 28px; height: 28px; flex-shrink: 0; margin-top: 2px;"></i>
+          <div>
+            <h4 style="margin-bottom: 0.3rem; font-size: 1.2rem;">Maximum Security</h4>
+            <p style="color: var(--text-secondary); font-size: 1rem;">Streamlined workflows and absolute legal security.</p>
+          </div>
+        </div>
+        
+        <button class="btn btn-outline" style="border-color: var(--accent-color); color: var(--text-primary); padding: 1rem 2.5rem; border-radius: 8px; font-weight: 550;">Talk to Sales</button>
+      </div>
+      
+      <div style="flex: 1 1 400px; min-height: 400px; background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1000&q=80&auto=format&fit=crop') center/cover;">
       </div>
     </div>
 
@@ -237,6 +371,12 @@
           <i data-lucide="music-4"></i> AudioSync
         </a>
         <p>Your premium source for royalty-free music and professional sound effects.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+        </div>
       </div>
       <div>
         <h3 class="footer-title">Library</h3>
@@ -262,6 +402,13 @@
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
+      <div>
+        <h3 class="footer-title">Contact Us</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:support@audiosync.com" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> support@audiosync.com</a></li>
+          <li><a href="mailto:licensing@audiosync.com" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> licensing@audiosync.com</a></li>
+        </ul>
+      </div>
     </div>
     <div class="container footer-bottom">
       <p>&copy; 2026 AudioSync. All rights reserved.</p>
@@ -272,5 +419,15 @@
   <script>
     lucide.createIcons();
   </script>
+<script src="assets/js/button-functionality.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
