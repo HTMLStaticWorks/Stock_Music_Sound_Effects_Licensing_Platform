@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | AudioSync</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .service-section {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+    .service-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .service-img {
+      flex: 1;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .service-content {
+      flex: 1;
+    }
+    .service-list {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .service-list li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    .service-list li::before {
+      content: "✓";
+      color: var(--accent-color);
+      position: absolute;
+      left: -1.5rem;
+      font-weight: bold;
+    }
+    [dir="rtl"] .service-section:nth-child(even) { flex-direction: row; }
+    [dir="rtl"] .service-section:nth-child(odd) { flex-direction: row-reverse; }
+    [dir="rtl"] .service-list { margin-left: 0; margin-right: 1.5rem; }
+    [dir="rtl"] .service-list li::before { left: auto; right: -1.5rem; }
+    
+    @media (max-width: 992px) {
+      .service-section, .service-section:nth-child(even) {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-progress"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <i data-lucide="music-4" class="accent"></i> AudioSync
+      </a>
+      
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Home <i data-lucide="chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" class="nav-link">Home 1</a></li>
+            <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="music-library.html" class="nav-link">Music Library</a></li>
+        <li><a href="license-center.html" class="nav-link">License Center</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" title="Toggle RTL">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary btn-sm">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container hero" style="min-height: 40vh; align-items: center; justify-content: center; text-align: center; background: var(--bg-secondary); border-radius: 0 0 40px 40px; margin-bottom: 4rem;">
+    <div class="fade-in">
+      <h1 class="hero-title">Our Services</h1>
+      <p class="hero-subtitle">Comprehensive audio solutions for every type of creator.</p>
+    </div>
+  </section>
+
+  <div class="container fade-in">
+    <!-- 1. Royalty-Free Music Licensing -->
+    <div class="service-section">
+      <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80&auto=format&fit=crop" alt="Music Licensing" class="service-img">
+      <div class="service-content">
+        <h2 class="section-title">Royalty-Free Music Licensing</h2>
+        <p>Access our vast catalog of premium music tracks across all genres. Never worry about copyright strikes again.</p>
+        <ul class="service-list">
+          <li><strong>Features:</strong> Unlimited downloads, Stems included, High-quality WAV.</li>
+          <li><strong>Deliverables:</strong> WAV & MP3 files, License Certificate.</li>
+          <li><strong>Expected Benefits:</strong> Peace of mind and instant access to professional audio.</li>
+        </ul>
+        <button class="btn btn-primary">Explore Music</button>
+      </div>
+    </div>
+
+    <!-- 2. Sound Effects Licensing -->
+    <div class="service-section">
+      <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80&auto=format&fit=crop" alt="Sound Effects" class="service-img">
+      <div class="service-content">
+        <h2 class="section-title">Sound Effects Licensing</h2>
+        <p>From cinematic impacts to everyday foley, our SFX library brings your visuals to life.</p>
+        <ul class="service-list">
+          <li><strong>Features:</strong> 100,000+ sounds, categorized by mood and action.</li>
+          <li><strong>Deliverables:</strong> Broadcast-ready 24-bit/48kHz WAV files.</li>
+          <li><strong>Expected Benefits:</strong> Enhanced production value and immersive storytelling.</li>
+        </ul>
+        <button class="btn btn-primary">Browse SFX</button>
+      </div>
+    </div>
+
+    <!-- 3. Podcast Audio Packs -->
+    <div class="service-section">
+      <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80&auto=format&fit=crop" alt="Podcast Packs" class="service-img">
+      <div class="service-content">
+        <h2 class="section-title">Podcast Audio Packs</h2>
+        <p>All-in-one bundles specifically tailored for podcasters. Includes intros, outros, and seamless background loops.</p>
+        <ul class="service-list">
+          <li><strong>Features:</strong> Pre-cut lengths, thematic collections, easy looping.</li>
+          <li><strong>Deliverables:</strong> Ready-to-use audio bundles for DAWs.</li>
+          <li><strong>Expected Benefits:</strong> Save hours of editing time per episode.</li>
+        </ul>
+        <button class="btn btn-primary">View Packs</button>
+      </div>
+    </div>
+
+    <!-- 4. Game Audio Assets -->
+    <div class="service-section">
+      <!-- Re-using a previous structure without an image as we need 6 images for 8 sections -->
+      <div class="service-content" style="flex: 2;">
+        <h2 class="section-title">Game Audio Assets</h2>
+        <p>Dynamic audio assets designed for interactive media. From 8-bit retro to massive AAA orchestral scores.</p>
+        <ul class="service-list">
+          <li><strong>Features:</strong> Middleware-ready files (FMOD/Wwise compatible), seamless loops.</li>
+          <li><strong>Deliverables:</strong> Interactive music stems and adaptive SFX.</li>
+          <li><strong>Expected Benefits:</strong> Immersive gameplay experiences and easy integration.</li>
+        </ul>
+        <button class="btn btn-primary">Discover Game Assets</button>
+      </div>
+    </div>
+
+    <!-- 5. Commercial License -->
+    <div class="service-section">
+      <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5956093?w=600&q=80&auto=format&fit=crop" alt="Commercial License" class="service-img">
+      <div class="service-content">
+        <h2 class="section-title">Commercial License</h2>
+        <p>Secure full rights for advertising, client work, and monetized digital content across all platforms.</p>
+        <ul class="service-list">
+          <li><strong>Features:</strong> Global clearance, unlimited impressions, transferable rights.</li>
+          <li><strong>Deliverables:</strong> Legal clearance documents and uncompressed audio.</li>
+          <li><strong>Expected Benefits:</strong> Total legal protection for high-stakes client projects.</li>
+        </ul>
+        <button class="btn btn-primary">Get Commercial Rights</button>
+      </div>
+    </div>
+
+    <!-- 6. Social Media License -->
+    <div class="service-section">
+      <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80&auto=format&fit=crop" alt="Social Media" class="service-img">
+      <div class="service-content">
+        <h2 class="section-title">Social Media License</h2>
+        <p>Perfect for YouTubers, TikTokers, and Instagram creators. Avoid Content ID claims effortlessly.</p>
+        <ul class="service-list">
+          <li><strong>Features:</strong> YouTube channel whitelisting, fast claim release.</li>
+          <li><strong>Deliverables:</strong> Direct platform integration for immediate clearance.</li>
+          <li><strong>Expected Benefits:</strong> Monetize videos without audio disputes.</li>
+        </ul>
+        <button class="btn btn-primary">Link Your Channel</button>
+      </div>
+    </div>
+
+    <!-- 7. Custom Licensing -->
+    <div class="service-section">
+      <!-- No image here, keeping total to 6 -->
+      <div class="service-content" style="flex: 2;">
+        <h2 class="section-title">Custom Licensing</h2>
+        <p>Need something unique? We offer bespoke music composition and custom sound design tailored to your brief.</p>
+        <ul class="service-list">
+          <li><strong>Features:</strong> 1-on-1 consultation, exclusive ownership rights available.</li>
+          <li><strong>Deliverables:</strong> Mastered stems and final mixdowns.</li>
+          <li><strong>Expected Benefits:</strong> A 100% unique sonic identity for your brand.</li>
+        </ul>
+        <button class="btn btn-primary">Contact Custom Team</button>
+      </div>
+    </div>
+
+    <!-- 8. Enterprise Solutions -->
+    <div class="service-section">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80&auto=format&fit=crop" alt="Enterprise Solutions" class="service-img">
+      <div class="service-content">
+        <h2 class="section-title">Enterprise Solutions</h2>
+        <p>Uncapped access and team collaboration tools for large agencies, production houses, and broadcasters.</p>
+        <ul class="service-list">
+          <li><strong>Features:</strong> Multi-seat accounts, API access, dedicated account manager.</li>
+          <li><strong>Deliverables:</strong> Global blanket licenses and custom invoicing.</li>
+          <li><strong>Expected Benefits:</strong> Streamlined workflows and maximum legal security.</li>
+        </ul>
+        <button class="btn btn-primary">Talk to Sales</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom: 1rem; display: inline-flex;">
+          <i data-lucide="music-4"></i> AudioSync
+        </a>
+        <p>Your premium source for royalty-free music and professional sound effects.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Library</h3>
+        <ul class="footer-links">
+          <li><a href="music-library.html">Music</a></li>
+          <li><a href="music-library.html">Sound Effects</a></li>
+          <li><a href="music-library.html">Collections</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="license-center.html">License Center</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 AudioSync. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

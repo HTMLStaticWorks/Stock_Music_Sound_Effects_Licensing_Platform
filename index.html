@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Music & Sound Effects | Premium Audio Licensing</title>
+  <meta name="description" content="Discover, preview, and license royalty-free music tracks and sound effects for your creative projects.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <i data-lucide="music-4" class="accent"></i> AudioSync
+      </a>
+      
+      <!-- Hamburger Menu for Mobile -->
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Home <i data-lucide="chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" class="nav-link active">Home 1</a></li>
+            <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="music-library.html" class="nav-link">Music Library</a></li>
+        <li><a href="license-center.html" class="nav-link">License Center</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" title="Toggle RTL">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary btn-sm">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. Hero Banner -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1920&auto=format&fit=crop" alt="Recording Studio Background">
+    </div>
+    <div class="container hero-content fade-in">
+      <h1 class="hero-title">Elevate Your Creativity with Premium Audio</h1>
+      <p class="hero-subtitle">Discover thousands of high-quality royalty-free music tracks and sound effects for films, YouTube, and podcasts.</p>
+      
+      <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search by mood, tempo, or genre...">
+        <button class="btn btn-primary search-btn">Search</button>
+      </div>
+
+      <div class="waveform-anim">
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Featured Music Collections -->
+  <section class="container fade-in">
+    <div class="section-header">
+      <h2 class="section-title">Featured Music Collections</h2>
+      <p class="section-subtitle">Curated playlists for your next big project.</p>
+    </div>
+    <div class="grid-4">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80&auto=format&fit=crop" alt="Cinematic Score">
+        </div>
+        <h3 class="card-title">Cinematic Scores</h3>
+        <div class="card-body">
+          <p>Epic and emotional tracks perfect for films and trailers.</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-secondary">Explore</button>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5956093?w=400&q=80&auto=format&fit=crop" alt="Corporate Pop">
+        </div>
+        <h3 class="card-title">Corporate Pop</h3>
+        <div class="card-body">
+          <p>Uplifting background music for presentations and ads.</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-secondary">Explore</button>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80&auto=format&fit=crop" alt="Electronic Dance">
+        </div>
+        <h3 class="card-title">Electronic Dance</h3>
+        <div class="card-body">
+          <p>High-energy beats for vlogs and lifestyle content.</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-secondary">Explore</button>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1516280440502-85f543632281?w=400&q=80&auto=format&fit=crop" alt="Lo-Fi Chill">
+        </div>
+        <h3 class="card-title">Lo-Fi Chill</h3>
+        <div class="card-body">
+          <p>Relaxing beats ideal for background study or podcasts.</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-secondary">Explore</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Browse by Mood -->
+  <section class="container fade-in" style="background-color: var(--bg-secondary); padding: 5rem 2rem; border-radius: var(--border-radius-lg);">
+    <div class="section-header">
+      <h2 class="section-title">Browse by Mood</h2>
+      <p class="section-subtitle">Find the perfect tone for your story.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card"><h3 class="card-title" style="text-align: center;"><i data-lucide="sun"></i><br>Happy & Upbeat</h3></div>
+      <div class="card"><h3 class="card-title" style="text-align: center;"><i data-lucide="cloud-rain"></i><br>Sad & Emotional</h3></div>
+      <div class="card"><h3 class="card-title" style="text-align: center;"><i data-lucide="zap"></i><br>Energetic & Fast</h3></div>
+      <div class="card"><h3 class="card-title" style="text-align: center;"><i data-lucide="moon"></i><br>Calm & Relaxing</h3></div>
+    </div>
+  </section>
+
+  <!-- 4. Sound Effects Collection -->
+  <section class="container fade-in">
+    <div class="section-header">
+      <h2 class="section-title">Premium Sound Effects</h2>
+      <p class="section-subtitle">Enhance your production value with professional SFX.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <h3 class="card-title">Foley & Ambience</h3>
+        <div class="card-body"><p>Realistic environment sounds.</p></div>
+        <div class="card-footer"><button class="btn btn-secondary">Preview</button></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">UI & Notifications</h3>
+        <div class="card-body"><p>Clicks, pops, and app sounds.</p></div>
+        <div class="card-footer"><button class="btn btn-secondary">Preview</button></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Sci-Fi & Magic</h3>
+        <div class="card-body"><p>Futuristic and fantasy audio elements.</p></div>
+        <div class="card-footer"><button class="btn btn-secondary">Preview</button></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Impacts & Transitions</h3>
+        <div class="card-body"><p>Whooshes, hits, and cinematic risers.</p></div>
+        <div class="card-footer"><button class="btn btn-secondary">Preview</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. License Categories -->
+  <section class="container fade-in">
+    <div class="section-header">
+      <h2 class="section-title">Flexible Licensing</h2>
+      <p class="section-subtitle">Choose the rights that fit your needs.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <h3 class="card-title">Personal Use</h3>
+        <div class="card-body"><p>Perfect for personal vlogs and non-monetized content.</p></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Commercial</h3>
+        <div class="card-body"><p>For digital ads, client work, and monetized videos.</p></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Broadcast</h3>
+        <div class="card-body"><p>Full clearance for TV, radio, and theatrical release.</p></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Enterprise</h3>
+        <div class="card-body"><p>Custom solutions for large agencies and platforms.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Popular Downloads -->
+  <section class="container fade-in">
+    <div class="section-header">
+      <h2 class="section-title">Popular Downloads</h2>
+      <p class="section-subtitle">Trending tracks this week.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <h3 class="card-title">Neon Nights</h3>
+        <div class="card-body"><p>Synthwave - 120 BPM</p></div>
+        <div class="card-footer"><button class="btn btn-primary">License</button></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Acoustic Sunrise</h3>
+        <div class="card-body"><p>Folk - 85 BPM</p></div>
+        <div class="card-footer"><button class="btn btn-primary">License</button></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Urban Flow</h3>
+        <div class="card-body"><p>Hip Hop - 90 BPM</p></div>
+        <div class="card-footer"><button class="btn btn-primary">License</button></div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Epic Trailer</h3>
+        <div class="card-body"><p>Orchestral - 130 BPM</p></div>
+        <div class="card-footer"><button class="btn btn-primary">License</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Customer Testimonials -->
+  <section class="container fade-in" style="background-color: var(--bg-secondary); padding: 5rem 2rem; border-radius: var(--border-radius-lg);">
+    <div class="section-header">
+      <h2 class="section-title">What Creators Say</h2>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <p class="card-body">"AudioSync has completely elevated our agency's video production. The quality is unmatched."</p>
+        <h3 class="card-title" style="font-size: 1rem;">- Sarah J., Producer</h3>
+      </div>
+      <div class="card">
+        <p class="card-body">"Finding the right track used to take hours. Now it takes minutes."</p>
+        <h3 class="card-title" style="font-size: 1rem;">- Mike T., YouTuber</h3>
+      </div>
+      <div class="card">
+        <p class="card-body">"The SFX library is incredibly deep and highly organized. Love the interface."</p>
+        <h3 class="card-title" style="font-size: 1rem;">- Elena R., Sound Editor</h3>
+      </div>
+      <div class="card">
+        <p class="card-body">"Simple licensing terms make legal clearance a breeze."</p>
+        <h3 class="card-title" style="font-size: 1rem;">- David K., Filmmaker</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CTA Banner -->
+  <section class="container fade-in">
+    <div style="background: var(--accent-color); color: white; padding: 4rem 2rem; border-radius: var(--border-radius-lg); text-align: center;">
+      <h2 class="section-title" style="color: white;">Start Creating Today</h2>
+      <p style="color: white; max-width: 600px; margin: 0 auto 2rem;">Join thousands of creators who trust AudioSync for their soundtrack needs.</p>
+      <button class="btn" style="background: white; color: var(--accent-color);">Browse Library</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom: 1rem; display: inline-flex;">
+          <i data-lucide="music-4"></i> AudioSync
+        </a>
+        <p>Your premium source for royalty-free music and professional sound effects.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Library</h3>
+        <ul class="footer-links">
+          <li><a href="music-library.html">Music</a></li>
+          <li><a href="music-library.html">Sound Effects</a></li>
+          <li><a href="music-library.html">Collections</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="license-center.html">License Center</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 AudioSync. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

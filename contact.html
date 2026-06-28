@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | AudioSync</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .contact-wrapper {
+      display: flex;
+      gap: 4rem;
+      flex-wrap: wrap;
+      margin-bottom: 5rem;
+    }
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    .contact-form-container {
+      flex: 1.5;
+      background: var(--bg-card);
+      padding: 3rem;
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      min-width: 300px;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-sm);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      font-size: 1rem;
+      transition: border-color var(--transition-fast);
+      outline: none;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--accent-color);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .contact-icon {
+      background: var(--bg-secondary);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--accent-color);
+      flex-shrink: 0;
+    }
+    .map-container {
+      width: 100%;
+      height: 400px;
+      background: #e2e8f0;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      margin-bottom: 5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-progress"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <i data-lucide="music-4" class="accent"></i> AudioSync
+      </a>
+      
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Home <i data-lucide="chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" class="nav-link">Home 1</a></li>
+            <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="music-library.html" class="nav-link">Music Library</a></li>
+        <li><a href="license-center.html" class="nav-link">License Center</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" title="Toggle RTL">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary btn-sm">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container hero" style="min-height: 40vh; align-items: center; justify-content: center; text-align: center; background: var(--bg-secondary); border-radius: 0 0 40px 40px; margin-bottom: 4rem;">
+    <div class="fade-in">
+      <h1 class="hero-title">Get in Touch</h1>
+      <p class="hero-subtitle">We'd love to hear from you. Our team is always here to help.</p>
+    </div>
+  </section>
+
+  <section class="container fade-in">
+    <div class="contact-wrapper">
+      
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2 class="section-title" style="margin-bottom: 2rem;">Contact Information</h2>
+        
+        <div class="contact-item">
+          <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+          <div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Our Office</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 0;">123 Audio Lane, Studio City<br>Los Angeles, CA 91604, USA</p>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon"><i data-lucide="phone"></i></div>
+          <div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Phone</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 0;">+1 (555) 123-4567<br>Mon-Fri, 9am - 6pm PST</p>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon"><i data-lucide="mail"></i></div>
+          <div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Email Support</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 0;">support@audiosync.com<br>sales@audiosync.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i data-lucide="message-circle"></i></div>
+          <div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Live Chat</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 0;">Available 24/7 for Premium users via Dashboard.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-container">
+        <h2 class="section-title" style="margin-bottom: 2rem;">Send us a message</h2>
+        <form>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div class="form-group" style="flex: 1; min-width: 200px;">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" placeholder="John" required>
+            </div>
+            <div class="form-group" style="flex: 1; min-width: 200px;">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" placeholder="Doe" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="john@example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-input" placeholder="How can we help?" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Your message..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Map Placeholder -->
+  <section class="container fade-in">
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105658.33719013009!2d-118.45524589999999!3d34.148154500000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c295b95bf26c2f%3A0xc3cfc37e9d7d91e3!2sStudio%20City%2C%20Los%20Angeles%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom: 1rem; display: inline-flex;">
+          <i data-lucide="music-4"></i> AudioSync
+        </a>
+        <p>Your premium source for royalty-free music and professional sound effects.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Library</h3>
+        <ul class="footer-links">
+          <li><a href="music-library.html">Music</a></li>
+          <li><a href="music-library.html">Sound Effects</a></li>
+          <li><a href="music-library.html">Collections</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="license-center.html">License Center</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 AudioSync. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

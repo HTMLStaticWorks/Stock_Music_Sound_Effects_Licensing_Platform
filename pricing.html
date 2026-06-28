@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing & Plans | AudioSync</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Pricing specific styles */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-normal);
+      position: relative;
+    }
+    .pricing-card:hover {
+      transform: translateY(-10px);
+    }
+    .pricing-card.popular {
+      border: 2px solid var(--accent-color);
+      transform: scale(1.05);
+      z-index: 2;
+    }
+    .pricing-card.popular:hover {
+      transform: scale(1.05) translateY(-10px);
+    }
+    .popular-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+    .price {
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 1rem 0;
+    }
+    .price span {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .pricing-features {
+      list-style: none;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    [dir="rtl"] .pricing-features {
+      text-align: right;
+    }
+    .pricing-features li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pricing-features i {
+      color: var(--accent-color);
+      flex-shrink: 0;
+    }
+    @media (max-width: 992px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-card.popular { transform: none; }
+      .pricing-card.popular:hover { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-progress"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <i data-lucide="music-4" class="accent"></i> AudioSync
+      </a>
+      
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Home <i data-lucide="chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" class="nav-link">Home 1</a></li>
+            <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="music-library.html" class="nav-link">Music Library</a></li>
+        <li><a href="license-center.html" class="nav-link">License Center</a></li>
+        <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" title="Toggle RTL">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary btn-sm">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container hero" style="min-height: 40vh; align-items: center; justify-content: center; text-align: center; background: var(--bg-secondary); border-radius: 0 0 40px 40px; margin-bottom: 4rem;">
+    <div class="fade-in">
+      <h1 class="hero-title">Simple, Transparent Pricing</h1>
+      <p class="hero-subtitle">Choose the perfect plan for your creative needs.</p>
+    </div>
+  </section>
+
+  <!-- 1. License Plans -->
+  <section class="container fade-in">
+    <div class="pricing-grid">
+      <!-- Creator Plan -->
+      <div class="pricing-card">
+        <h3>Creator</h3>
+        <p>For independent content creators.</p>
+        <div class="price">$15<span>/mo</span></div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check-circle"></i> Unlimited Music & SFX</li>
+          <li><i data-lucide="check-circle"></i> Clear 1 YouTube Channel</li>
+          <li><i data-lucide="check-circle"></i> Podcasts & Social Media</li>
+          <li><i data-lucide="x" style="color:var(--text-secondary);"></i> Client Work</li>
+        </ul>
+        <button class="btn btn-secondary" style="width: 100%;">Get Started</button>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="pricing-card popular">
+        <div class="popular-badge">Most Popular</div>
+        <h3>Pro Creator</h3>
+        <p>For freelancers and digital agencies.</p>
+        <div class="price">$39<span>/mo</span></div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check-circle"></i> Everything in Creator</li>
+          <li><i data-lucide="check-circle"></i> Clear 5 YouTube Channels</li>
+          <li><i data-lucide="check-circle"></i> Commercial Client Work</li>
+          <li><i data-lucide="check-circle"></i> Digital Advertising</li>
+        </ul>
+        <button class="btn btn-primary" style="width: 100%;">Start Free Trial</button>
+      </div>
+
+      <!-- Broadcast Plan -->
+      <div class="pricing-card">
+        <h3>Broadcast</h3>
+        <p>For TV, Radio, and Film productions.</p>
+        <div class="price">$99<span>/mo</span></div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check-circle"></i> Everything in Pro</li>
+          <li><i data-lucide="check-circle"></i> Local & National TV/Radio</li>
+          <li><i data-lucide="check-circle"></i> SVOD/VOD Streaming</li>
+          <li><i data-lucide="check-circle"></i> Isolated Stems</li>
+        </ul>
+        <button class="btn btn-secondary" style="width: 100%;">Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Comparison Table (Image 1 beside it) -->
+  <section class="container fade-in" style="background-color: var(--bg-secondary); padding: 5rem 2rem; border-radius: var(--border-radius-lg); margin-bottom: 4rem;">
+    <div style="display: flex; gap: 4rem; flex-wrap: wrap; align-items: center;">
+      <div style="flex: 2; min-width: 300px;">
+        <h2 class="section-title">Feature Comparison</h2>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left;">
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <th style="padding: 1rem;">Features</th>
+              <th style="padding: 1rem;">Creator</th>
+              <th style="padding: 1rem;">Pro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 1rem;">Daily Download Limit</td>
+              <td style="padding: 1rem;">Unlimited</td>
+              <td style="padding: 1rem;">Unlimited</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 1rem;">Audio Quality</td>
+              <td style="padding: 1rem;">MP3 / WAV</td>
+              <td style="padding: 1rem;">High-Res WAV</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 1rem;">Client Clearance</td>
+              <td style="padding: 1rem;"><i data-lucide="x" style="color: red;"></i></td>
+              <td style="padding: 1rem;"><i data-lucide="check" style="color: green;"></i></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div style="flex: 1; min-width: 300px;">
+        <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?w=600&q=80" alt="Comparison" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Enterprise Pricing (Image 2) -->
+  <section class="container fade-in" style="margin-bottom: 4rem;">
+    <div style="display: flex; gap: 4rem; align-items: center; flex-wrap: wrap; flex-direction: row-reverse;">
+      <div style="flex: 1;">
+        <h2 class="section-title">Enterprise Solutions</h2>
+        <p>Need custom licensing for a global agency, broadcaster, or large-scale video game? Our Enterprise plans offer total flexibility.</p>
+        <ul style="list-style:none; margin:1.5rem 0; color:var(--text-secondary);">
+          <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="color:var(--accent-color);"></i> Custom Terms & Indemnification</li>
+          <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="color:var(--accent-color);"></i> Multiple User Seats</li>
+          <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="color:var(--accent-color);"></i> API Access</li>
+        </ul>
+        <button class="btn btn-primary">Contact Sales</button>
+      </div>
+      <div style="flex: 1;">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="Enterprise" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FAQ (Image 3 and 4 integrated into the layout) -->
+  <section class="container fade-in" style="margin-bottom: 5rem;">
+    <div class="section-header">
+      <h2 class="section-title">Pricing FAQ</h2>
+    </div>
+    <div style="display: flex; gap: 4rem; flex-wrap: wrap;">
+      <div style="flex: 2; min-width: 300px;">
+        <div style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0;">
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Can I upgrade or downgrade anytime?</h3>
+          <p style="color: var(--text-secondary);">Yes, you can change your plan at any time from your dashboard settings. Upgrades take effect immediately.</p>
+        </div>
+        <div style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0;">
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Do you offer student discounts?</h3>
+          <p style="color: var(--text-secondary);">Yes! We offer a 50% discount for eligible students and educators. Please contact support with your .edu email.</p>
+        </div>
+        <div style="border-bottom: 1px solid var(--border-color); padding: 1.5rem 0;">
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">What forms of payment do you accept?</h3>
+          <p style="color: var(--text-secondary);">We accept all major credit cards, PayPal, and Apple Pay. For Enterprise plans, we can arrange wire transfers.</p>
+        </div>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 2rem; min-width: 300px;">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80" alt="FAQ 1" style="border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); aspect-ratio: 16/9; object-fit: cover;">
+        <img src="https://images.unsplash.com/photo-1516280440502-85f543632281?w=400&q=80" alt="FAQ 2" style="border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); aspect-ratio: 16/9; object-fit: cover;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom: 1rem; display: inline-flex;">
+          <i data-lucide="music-4"></i> AudioSync
+        </a>
+        <p>Your premium source for royalty-free music and professional sound effects.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Library</h3>
+        <ul class="footer-links">
+          <li><a href="music-library.html">Music</a></li>
+          <li><a href="music-library.html">Sound Effects</a></li>
+          <li><a href="music-library.html">Collections</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="license-center.html">License Center</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 AudioSync. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

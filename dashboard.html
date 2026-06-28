@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyer Dashboard | AudioSync</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden; /* No unnecessary scrolling */
+      background: var(--bg-secondary);
+      margin: 0;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background: var(--bg-card);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-fast);
+      z-index: 100;
+    }
+    [dir="rtl"] .sidebar {
+      border-right: none;
+      border-left: 1px solid var(--border-color);
+    }
+    .sidebar-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .sidebar-brand i { color: var(--accent-color); }
+    
+    .sidebar-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem 0;
+    }
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1.5rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+    .sidebar-link:hover, .sidebar-link.active {
+      background: var(--bg-secondary);
+      color: var(--accent-color);
+      border-left: 4px solid var(--accent-color);
+    }
+    [dir="rtl"] .sidebar-link:hover, [dir="rtl"] .sidebar-link.active {
+      border-left: none;
+      border-right: 4px solid var(--accent-color);
+    }
+    
+    .sidebar-footer {
+      padding: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+    .logout-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.75rem;
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: none;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      font-weight: 500;
+      transition: background var(--transition-fast);
+    }
+    .logout-btn:hover { background: rgba(239, 68, 68, 0.2); }
+    
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .topbar {
+      height: 70px;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .dashboard-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 2rem;
+    }
+    
+    /* Widgets */
+    .widget-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .widget {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .widget-value {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    /* Responsive Sidebar */
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+    @media (max-width: 992px) {
+      .sidebar {
+        position: fixed;
+        left: -280px;
+        height: 100vh;
+      }
+      [dir="rtl"] .sidebar {
+        left: auto;
+        right: -280px;
+      }
+      .sidebar.open {
+        transform: translateX(280px);
+      }
+      [dir="rtl"] .sidebar.open {
+        transform: translateX(-280px);
+      }
+      .mobile-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-brand">
+        <i data-lucide="music-4"></i> AudioSync
+      </div>
+      <button class="icon-btn mobile-toggle" id="closeSidebar">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-link active"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+      <a href="#" class="sidebar-link"><i data-lucide="shopping-bag"></i> Purchased Licenses</a>
+      <a href="#" class="sidebar-link"><i data-lucide="download"></i> Downloads</a>
+      <a href="#" class="sidebar-link"><i data-lucide="activity"></i> Track Usage</a>
+      <a href="#" class="sidebar-link"><i data-lucide="smile"></i> Mood Collections</a>
+      <a href="#" class="sidebar-link"><i data-lucide="heart"></i> Favorite Tracks</a>
+      <a href="#" class="sidebar-link"><i data-lucide="history"></i> License History</a>
+      <a href="#" class="sidebar-link"><i data-lucide="folder"></i> Projects</a>
+      <a href="#" class="sidebar-link"><i data-lucide="bell"></i> Notifications</a>
+      <a href="settings.html" class="sidebar-link"><i data-lucide="settings"></i> Settings</a>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <button class="logout-btn" id="logoutBtn">
+        <i data-lucide="log-out"></i> Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="topbar">
+      <button class="icon-btn mobile-toggle" id="openSidebar">
+        <i data-lucide="menu"></i>
+      </button>
+      <h2 style="margin:0; font-size:1.2rem;">Overview</h2>
+      
+      <div class="topbar-actions">
+        <button class="icon-btn theme-toggle" title="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" title="Toggle RTL">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <div style="display:flex; align-items:center; gap:0.5rem; margin-left:1rem; border-left:1px solid var(--border-color); padding-left:1rem;">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Avatar" style="width:36px; height:36px; border-radius:50%;">
+          <span style="font-weight:500;">John Doe</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="dashboard-body fade-in">
+      
+      <!-- Top Widgets -->
+      <div class="widget-grid">
+        <div class="widget">
+          <div class="widget-header">
+            <span>Purchased Tracks</span>
+            <i data-lucide="music" style="color:var(--accent-color);"></i>
+          </div>
+          <div class="widget-value counter" data-target="124">0</div>
+        </div>
+        <div class="widget">
+          <div class="widget-header">
+            <span>Active Licenses</span>
+            <i data-lucide="shield" style="color:var(--accent-color);"></i>
+          </div>
+          <div class="widget-value counter" data-target="86">0</div>
+        </div>
+        <div class="widget">
+          <div class="widget-header">
+            <span>Downloads This Month</span>
+            <i data-lucide="download-cloud" style="color:var(--accent-color);"></i>
+          </div>
+          <div class="widget-value counter" data-target="42">0</div>
+        </div>
+        <div class="widget">
+          <div class="widget-header">
+            <span>Favorite Collections</span>
+            <i data-lucide="heart" style="color:var(--accent-color);"></i>
+          </div>
+          <div class="widget-value counter" data-target="12">0</div>
+        </div>
+      </div>
+
+      <!-- Complex Widgets Area -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+        
+        <!-- Recent Downloads & Audio Preview -->
+        <div class="widget" style="display: flex; flex-direction: column;">
+          <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Recent Downloads</h3>
+          <div style="flex:1; overflow-y:auto;">
+            <!-- Track Item -->
+            <div style="display:flex; align-items:center; gap:1rem; padding:1rem 0; border-bottom:1px solid var(--border-color);">
+              <button class="icon-btn" style="background:var(--bg-secondary);"><i data-lucide="play" style="color:var(--accent-color);"></i></button>
+              <div style="flex:1;">
+                <div style="font-weight:500;">Epic Cinematic Trailer</div>
+                <div style="font-size:0.85rem; color:var(--text-secondary);">Downloaded 2 days ago • Commercial License</div>
+              </div>
+              <button class="icon-btn"><i data-lucide="download"></i></button>
+            </div>
+            <!-- Track Item -->
+            <div style="display:flex; align-items:center; gap:1rem; padding:1rem 0; border-bottom:1px solid var(--border-color);">
+              <button class="icon-btn" style="background:var(--bg-secondary);"><i data-lucide="play" style="color:var(--accent-color);"></i></button>
+              <div style="flex:1;">
+                <div style="font-weight:500;">Lofi Study Beats</div>
+                <div style="font-size:0.85rem; color:var(--text-secondary);">Downloaded 5 days ago • Personal License</div>
+              </div>
+              <button class="icon-btn"><i data-lucide="download"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Column Widgets -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- License Expiry / Usage Rights -->
+          <div class="widget">
+            <h3 style="margin-bottom: 1rem;">Subscription Status</h3>
+            <div style="padding:1rem; background:rgba(99,102,241,0.1); border-radius:var(--border-radius-md); border:1px solid rgba(99,102,241,0.3);">
+              <div style="color:var(--accent-color); font-weight:600; margin-bottom:0.5rem;">Pro Creator Plan</div>
+              <div style="font-size:0.9rem;">Renews in 14 days</div>
+              <div style="margin-top:1rem; width:100%; height:6px; background:var(--bg-primary); border-radius:3px; overflow:hidden;">
+                <div style="width:60%; height:100%; background:var(--accent-color);"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Quick Search Widget -->
+          <div class="widget">
+            <h3 style="margin-bottom: 1rem;">Quick Search</h3>
+            <div style="display:flex; flex-direction:column; gap:0.5rem;">
+              <input type="text" placeholder="Mood Search (e.g. Happy)" style="padding:0.75rem; border:1px solid var(--border-color); border-radius:var(--border-radius-sm); background:var(--bg-primary); color:var(--text-primary); outline:none;">
+              <input type="text" placeholder="Tempo Search (e.g. 120 BPM)" style="padding:0.75rem; border:1px solid var(--border-color); border-radius:var(--border-radius-sm); background:var(--bg-primary); color:var(--text-primary); outline:none;">
+              <button class="btn btn-secondary" style="width:100%;">Search Catalog</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
