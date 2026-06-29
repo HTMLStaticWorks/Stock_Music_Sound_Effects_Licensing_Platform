@@ -87,6 +87,10 @@
     }
     @media (max-width: 767px) {
       .pricing-grid { grid-template-columns: 1fr; }
+      .enterprise-section-flex {
+        flex-direction: column-reverse !important;
+        gap: 2rem !important;
+      }
     }
   </style>
 </head>
@@ -243,7 +247,7 @@
 
   <!-- 3. Enterprise Pricing (Image 2) -->
   <section class="container fade-in" style="margin-bottom: 4rem;">
-    <div style="display: flex; gap: 4rem; align-items: center; flex-wrap: wrap; flex-direction: row-reverse;">
+    <div class="enterprise-section-flex" style="display: flex; gap: 4rem; align-items: center; flex-wrap: wrap; flex-direction: row-reverse;">
       <div style="flex: 1;">
         <h2 class="section-title">Enterprise Solutions</h2>
         <p>Need custom licensing for a global agency, broadcaster, or large-scale video game? Our Enterprise plans offer total flexibility.</p>

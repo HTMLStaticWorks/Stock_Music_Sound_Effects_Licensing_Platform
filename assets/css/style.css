@@ -714,6 +714,11 @@ section {
   /* extra pop on hover */
 }
 
+.sfx-hex-wrapper:hover .sfx-hex-content h3,
+.sfx-hex-wrapper:hover .sfx-hex-content p {
+  color: #ffffff;
+}
+
 .sfx-hex-content h3 {
   font-size: 1.2rem;
   margin: 0;
@@ -1217,10 +1222,19 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1), color var(--transition-fast) ease;
+  width: 44px;
+  height: 44px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon:hover {
-  color: var(--accent-color);
-  transform: translateY(-4px);
+  color: white;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
