@@ -208,8 +208,6 @@
       <a href="#" data-target="notifications" class="sidebar-link"><i data-lucide="bell"></i> Notifications</a>
       <a href="#" data-target="settings" class="sidebar-link"><i data-lucide="settings"></i> Settings</a>
       <div style="height: 1px; background: var(--border-color); margin: 0.5rem 0;"></div>
-      <a href="#" class="sidebar-link theme-toggle"><i data-lucide="moon"></i> Toggle Theme</a>
-      <a href="#" class="sidebar-link rtl-toggle"><i data-lucide="arrow-left-right"></i> Toggle RTL</a>
     </nav>
     
     <div class="sidebar-footer" style="display:flex; flex-direction:column; gap:1rem;">
@@ -232,7 +230,8 @@
       <h2 style="margin:0; font-size:1.2rem;">Welcome back, John Doe! 👋</h2>
       
       <div class="topbar-actions">
-        <!-- Moved to sidebar -->
+        <button class="icon-btn theme-toggle" title="Toggle Theme"><i data-lucide="moon"></i></button>
+        <button class="icon-btn rtl-toggle" title="Toggle RTL"><i data-lucide="arrow-left-right"></i></button>
       </div>
     </div>
     
@@ -283,7 +282,7 @@
               <button class="icon-btn" style="background:var(--bg-secondary);"><i data-lucide="play" style="color:var(--accent-color);"></i></button>
               <div style="flex:1;">
                 <div style="font-weight:500;">Epic Cinematic Trailer</div>
-                <div style="font-size:0.85rem; color:var(--text-secondary);">Downloaded 2 days ago • Commercial License</div>
+                <div style="font-size:0.85rem; color:var(--text-secondary);">Downloaded 2 days ago â€¢ Commercial License</div>
               </div>
               <button class="icon-btn"><i data-lucide="download"></i></button>
             </div>
@@ -292,7 +291,7 @@
               <button class="icon-btn" style="background:var(--bg-secondary);"><i data-lucide="play" style="color:var(--accent-color);"></i></button>
               <div style="flex:1;">
                 <div style="font-weight:500;">Lofi Study Beats</div>
-                <div style="font-size:0.85rem; color:var(--text-secondary);">Downloaded 5 days ago • Personal License</div>
+                <div style="font-size:0.85rem; color:var(--text-secondary);">Downloaded 5 days ago â€¢ Personal License</div>
               </div>
               <button class="icon-btn"><i data-lucide="download"></i></button>
             </div>
@@ -341,11 +340,11 @@
           <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Recent Purchases</h3>
           <div style="display: flex; flex-direction: column; gap: 1rem;">
             <div style="display:flex; justify-content:space-between; align-items:center; padding:1rem; border:1px solid var(--border-color); border-radius:var(--border-radius-sm);">
-              <div><strong style="display:block; margin-bottom:0.25rem;">Epic Cinematic Trailer</strong><span style="font-size:0.85rem; color:var(--text-secondary);">Standard License • Oct 24, 2026</span></div>
+              <div><strong style="display:block; margin-bottom:0.25rem;">Epic Cinematic Trailer</strong><span style="font-size:0.85rem; color:var(--text-secondary);">Standard License â€¢ Oct 24, 2026</span></div>
               <button class="btn btn-secondary btn-sm" style="padding: 0.5rem 1rem;"><i data-lucide="download"></i> PDF</button>
             </div>
             <div style="display:flex; justify-content:space-between; align-items:center; padding:1rem; border:1px solid var(--border-color); border-radius:var(--border-radius-sm);">
-              <div><strong style="display:block; margin-bottom:0.25rem;">Lofi Study Beats</strong><span style="font-size:0.85rem; color:var(--text-secondary);">Premium License • Oct 20, 2026</span></div>
+              <div><strong style="display:block; margin-bottom:0.25rem;">Lofi Study Beats</strong><span style="font-size:0.85rem; color:var(--text-secondary);">Premium License â€¢ Oct 20, 2026</span></div>
               <button class="btn btn-secondary btn-sm" style="padding: 0.5rem 1rem;"><i data-lucide="download"></i> PDF</button>
             </div>
           </div>
@@ -364,7 +363,7 @@
           <div style="display: flex; flex-direction: column; gap: 1rem;">
             <div style="display:flex; align-items:center; gap:1rem; padding:1rem; border:1px solid var(--border-color); border-radius:var(--border-radius-sm);">
               <button class="icon-btn" style="background:var(--bg-secondary);"><i data-lucide="play" style="color:var(--accent-color);"></i></button>
-              <div style="flex:1;"><strong style="display:block; margin-bottom:0.25rem;">Corporate Presentation Background</strong><span style="font-size:0.85rem; color:var(--text-secondary);">Downloaded today • WAV, 44.1kHz</span></div>
+              <div style="flex:1;"><strong style="display:block; margin-bottom:0.25rem;">Corporate Presentation Background</strong><span style="font-size:0.85rem; color:var(--text-secondary);">Downloaded today â€¢ WAV, 44.1kHz</span></div>
               <button class="icon-btn"><i data-lucide="download"></i></button>
             </div>
           </div>
@@ -518,6 +517,7 @@
 <script src="assets/js/button-functionality.js"></script>
 </body>
 </html>
+
 
 
 

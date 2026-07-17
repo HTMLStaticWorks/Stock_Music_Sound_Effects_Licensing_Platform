@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return false; // Handled by theme JS
         }
 
+        if (el.classList.contains('sidebar-link') || el.closest('.sidebar-link')) {
+            return false; // Let dashboard tab JS handle it
+        }
+
         let matched = false;
         for (const [key, url] of Object.entries(routeMap)) {
             // Need a more robust match so 'select' doesn't match 'unselect' etc, but simple includes is fine for our limited vocabulary
